@@ -1,0 +1,71 @@
+#########################################################################
+#   Raima Data Manager 4.5 - TIMS Example
+#   Microsoft C 9.x (Visual C++ 2.x), 10.x (Visual C++ 4.x)
+#
+#   Copyright (C) 1984, 1997 Raima Corporation, All Rights Reserved
+#########################################################################
+
+VINC = $(VROOT)\include
+VLIB = $(VROOT)\lib\$(CMP)
+VBIN = $(VROOT)\bin
+
+#
+# Compiler and linker switches for debug / non-debug
+#
+
+!ifdef DEBUG
+
+CC = cl -nologo -c -Zi -W3 -Zp4 -YX -ML -I$(VINC) -DUSE_DB_LIB -Fo$@
+LINK = link /NOLOGO /SUBSYSTEM:CONSOLE /MAP /MACHINE:IX86 /DEBUG /DEBUGTYPE:CV 
+
+!else
+
+CC = cl -nologo -c -W3 -Zp4 -YX -ML -I$(VINC) -DUSE_DB_LIB -Fo$@
+LINK = link /NOLOGO /SUBSYSTEM:CONSOLE /MAP /MACHINE:IX86
+
+!endif
+
+#########################################################################
+
+all: tims.dbd tims.exe
+
+
+tims.dbd: tims.ddl
+   $(VBIN)\ddlp -b4 tims.ddl
+   $(VBIN)\initdb -y tims
+   $(VBIN)\dbimp tims.imp
+
+
+tims.obj: tims.c tims.h
+   $(CC) tims.c 
+
+borrow.obj: borrow.c tims.h
+   $(CC) borrow.c
+
+delinfo.obj: delinfo.c tims.h
+   $(CC) delinfo.c
+
+entinfo.obj: entinfo.c tims.h
+   $(CC) entinfo.c
+
+findpubs.obj: findpubs.c tims.h
+   $(CC) findpubs.c
+
+listauth.obj: listauth.c tims.h
+   $(CC) listauth.c
+
+listkeys.obj: listkeys.c tims.h
+   $(CC) listkeys.c
+
+OBJS =    tims.obj     borrow.obj   delinfo.obj  \
+          entinfo.obj  findpubs.obj listauth.obj \
+          listkeys.obj
+
+tims.exe: $(OBJS)
+   $(LINK) /OUT:tims.exe @<<
+$(OBJS)
+$(VLIB)\rdm45mu.lib advapi32.lib mpr.lib
+<<
+
+# $Revision:   1.1  $
+

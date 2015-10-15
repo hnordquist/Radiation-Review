@@ -1,0 +1,25 @@
+NAME        WTIMS
+
+DESCRIPTION 'TIMS Sample Application, Copyright (C) 1989 Raima Corporation.'
+
+CODE MOVEABLE DISCARDABLE LOADONCALL
+DATA MOVEABLE MULTIPLE
+
+SEGMENTS
+	    _TEXT
+
+
+STACKSIZE   8192
+
+HEAPSIZE    4096
+
+EXPORTS     MainWndProc                 @1    ; window procedure
+            AboutDlgProc       @2
+            InsertInfoDlgProc  @3
+            DeleteInfoDlgProc  @4
+            BorrowBookDlgProc  @5
+            ReturnBookDlgProc  @6
+            BorrowingsDlgProc  @7
+            KeyWordsDlgProc    @8
+            AuthorsDlgProc     @9
+            ViewInfoDlgProc    @10

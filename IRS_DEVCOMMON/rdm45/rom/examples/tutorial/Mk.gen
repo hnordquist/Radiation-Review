@@ -1,0 +1,80 @@
+################################################################
+#
+# mk.gen -- makefile dependencies
+#
+################################################################
+
+PROG     = tims
+SRCDIR   = .
+OBJDIR   = .
+
+OBJS = \
+   $(OBJDIR)\tims.obj \
+   $(OBJDIR)\infonav.obj \
+   $(OBJDIR)\delauth.obj \
+   $(OBJDIR)\delinfo.obj \
+   $(OBJDIR)\entinfo.obj \
+   $(OBJDIR)\entauth.obj \
+   $(OBJDIR)\listauth.obj 
+
+!IF "$(TARGET_TYPE)" == "OS2APP"
+DEFFILE=, timsos2.def
+!ELSE
+DEFFILE=, tims.def
+!ENDIF
+
+
+all: tutorial.dbd tims.exe
+
+tutorial.dbd: tutorial.ddl 
+   dbinit
+
+mkopts.fil: makefile
+	echo $(CCOPTS) > mkopts.fil
+
+!IF "$(TARGET_TYPE)" == "WIN32APP" && "$(CTYPE)" == "msvc32"
+tims.exe: mkopts.fil $(OBJS) 
+   $(LINK) $(LNKOPTS) $(OBJS) $(LINKEND) msvcrtd.lib /NODEFAULTLIB:msvcrt.lib
+!ELSE
+
+mk.rsp: makefile
+	echo $(OBJDIR)\delinfo.obj + >mk.rsp
+	echo $(OBJDIR)\entinfo.obj + >>mk.rsp
+	echo $(OBJDIR)\infonav.obj + >>mk.rsp
+	echo $(OBJDIR)\listauth.obj + >>mk.rsp
+	echo $(OBJDIR)\delauth.obj + >>mk.rsp
+	echo $(OBJDIR)\entauth.obj + >>mk.rsp
+	echo $(OBJDIR)\tims.obj    >>mk.rsp
+	echo tims.exe               >>mk.rsp
+	echo tims.map                >>mk.rsp
+	echo $(LINKEND)+ >>mk.rsp
+	echo $(LINK2) + >>mk.rsp
+
+tims.exe: mkopts.fil $(OBJS) mk.rsp 
+   $(LINK) $(LNKOPTS) @mk.rsp
+	if exist mkopts.fil del mkopts.fil
+	if exist mk.rsp del mk.rsp
+!ENDIF
+
+$(OBJDIR)\infonav.obj: $(SRCDIR)\infonav.cpp $(SRCDIR)\header.hpp $(SRCDIR)\tutorial.hpp
+	$(MKCMD) $(SRCDIR)\infonav.cpp
+
+$(OBJDIR)\delinfo.obj: $(SRCDIR)\delinfo.cpp $(SRCDIR)\header.hpp $(SRCDIR)\tutorial.hpp
+	$(MKCMD) $(SRCDIR)\delinfo.cpp
+
+$(OBJDIR)\entinfo.obj: $(SRCDIR)\entinfo.cpp $(SRCDIR)\header.hpp $(SRCDIR)\tutorial.hpp
+	$(MKCMD) $(SRCDIR)\entinfo.cpp
+
+$(OBJDIR)\delauth.obj: $(SRCDIR)\delauth.cpp $(SRCDIR)\header.hpp $(SRCDIR)\tutorial.hpp
+	$(MKCMD) $(SRCDIR)\delauth.cpp
+
+$(OBJDIR)\listauth.obj: $(SRCDIR)\listauth.cpp $(SRCDIR)\header.hpp $(SRCDIR)\tutorial.hpp
+	$(MKCMD) $(SRCDIR)\listauth.cpp
+
+$(OBJDIR)\entauth.obj: $(SRCDIR)\entauth.cpp $(SRCDIR)\header.hpp $(SRCDIR)\tutorial.hpp
+	$(MKCMD) $(SRCDIR)\entauth.cpp
+
+$(OBJDIR)\tims.obj: $(SRCDIR)\tims.cpp $(SRCDIR)\header.hpp $(SRCDIR)\tutorial.hpp
+	$(MKCMD) $(SRCDIR)\tims.cpp
+
+

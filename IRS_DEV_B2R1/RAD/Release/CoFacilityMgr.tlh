@@ -1,0 +1,411 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8168.0 (e80468cc).
+//
+// c:\code\rad\irs_dev_b2r1\rad\release\CoFacilityMgr.tlh
+//
+// C++ source equivalent of Win32 type library CoFacilityMgr.exe
+// compiler-generated file created 11/17/14 at 12:52:58 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+//
+// Forward references and typedefs
+//
+
+struct /* coclass */ FacilityMgrData;
+struct __declspec(uuid("608da78f-1a8b-411c-aa2e-e4d5018ed010"))
+/* dual interface */ IFacilityMgrData;
+struct /* coclass */ FacilityConfigDlgs;
+struct __declspec(uuid("20a69b33-4b72-465f-9ded-4abe71f08354"))
+/* dual interface */ IFacilityConfigDlgs;
+struct /* coclass */ InstrumentDefData;
+struct __declspec(uuid("034f409d-f95b-44ee-b442-fee96f4b5ba6"))
+/* dual interface */ IInstrumentDefData;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IFacilityMgrData, __uuidof(IFacilityMgrData));
+_COM_SMARTPTR_TYPEDEF(IFacilityConfigDlgs, __uuidof(IFacilityConfigDlgs));
+_COM_SMARTPTR_TYPEDEF(IInstrumentDefData, __uuidof(IInstrumentDefData));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("4a50e0c6-7dca-4045-8cc4-c30de6917f42"))
+FacilityMgrData;
+    // [ default ] interface IFacilityMgrData
+
+struct __declspec(uuid("608da78f-1a8b-411c-aa2e-e4d5018ed010"))
+IFacilityMgrData : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetFacilityDirectory (
+        short FacilityID );
+    VARIANT_BOOL IsChannelEnabled (
+        short sFacilityID,
+        long lStationID,
+        _bstr_t bstrInstrumentType,
+        short sChannelID );
+    short GetChannelID (
+        short sFacilityID,
+        long lStationID,
+        _bstr_t bstrInstrumentType,
+        _bstr_t bstrChannelLongName );
+    HRESULT GetChannelIDs (
+        short sFacilityID,
+        long lStationID,
+        _bstr_t bstrInstrumentType,
+        VARIANT_BOOL vbEnabledChannelsOnly,
+        VARIANT * psaChannelIDs );
+    _bstr_t GetChannelLongName (
+        short sFacilityID,
+        long lStationID,
+        _bstr_t bstrInstrumentType,
+        short sChannelID );
+    HRESULT GetChannelRecord (
+        short sFacilityID,
+        long lStationID,
+        _bstr_t bstrInstrumentType,
+        short sChannelID,
+        VARIANT * psaChannelRec );
+    _bstr_t GetChannelShortName (
+        short sFacilityID,
+        long lStationID,
+        _bstr_t bstrInstrumentType,
+        short sChannelID );
+    short GetFacilityID (
+        _bstr_t bstrFacilityLongName );
+    HRESULT GetFacilityIDs (
+        VARIANT_BOOL vbEnabledFacilitiesOnly,
+        VARIANT * psaFacilityIDs );
+    _bstr_t GetFacilityLongName (
+        short sFacilityID );
+    HRESULT GetFacilityRecord (
+        short sFacilityID,
+        VARIANT * psaFacilityRecord );
+    _bstr_t GetFacilityShortName (
+        short sFacilityID );
+    HRESULT GetFacilityNamesList (
+        VARIANT_BOOL vbEnabledFacilitiesOnly,
+        VARIANT_BOOL vbOrderByPriority,
+        VARIANT * psaFacilityNamesList );
+    HRESULT GetStationNamesList (
+        short sFacilityID,
+        VARIANT_BOOL vbEnabledStationsOnly,
+        VARIANT_BOOL vbOrderByPriority,
+        VARIANT * psaStationNamesList );
+    short GetNumberOfChannelsForStation (
+        short sFacilityID,
+        long lStationID,
+        _bstr_t bstrInstrumentType,
+        VARIANT_BOOL vbEnabledChannelsOnly );
+    short GetNumberOfChannelsForFacility (
+        short sFacilityID,
+        VARIANT_BOOL vbEnabledChannelsOnly );
+    short GetNumberOfFacilities (
+        VARIANT_BOOL vbEnabledFacilitiesOnly );
+    short GetNumberOfStationsForFacility (
+        short sFacilityID,
+        VARIANT_BOOL vbEnabledStationsOnly );
+    VARIANT_BOOL IsStationEnabled (
+        short sFacilityID,
+        long lStationID,
+        _bstr_t bstrInstrumentType );
+    HRESULT GetStationID (
+        short sFacilityID,
+        _bstr_t bstrStationLongName,
+        long * plStationID,
+        BSTR * pbstrStationInstType );
+    HRESULT GetStationIDs (
+        short sFacilityID,
+        VARIANT_BOOL vbEnabledStationsOnly,
+        VARIANT * psaStationIDs );
+    _bstr_t GetStationLongName (
+        short sFacilityID,
+        long lStationID,
+        _bstr_t bstrInstrumentType );
+    HRESULT GetStationRecord (
+        short sFacilityID,
+        long lStationID,
+        _bstr_t bstrInstrumentType,
+        VARIANT * psaStationRecord );
+    _bstr_t GetStationShortName (
+        short sFacilityID,
+        long lStationID,
+        _bstr_t bstrInstrumentType );
+    VARIANT_BOOL IsChannelDefined (
+        short sFacilityID,
+        long lStationID,
+        _bstr_t bstrInstrumentType,
+        short sChannelID );
+    VARIANT_BOOL IsFacilityDefined (
+        short sFacilityID );
+    VARIANT_BOOL IsStationDefined (
+        short sFacilityID,
+        long lStationID,
+        _bstr_t bstrInstrumentType );
+    VARIANT_BOOL IsFacilityEnabled (
+        short sFacilityID );
+    HRESULT GetChannelIDsForFacility (
+        short sFacilityID,
+        VARIANT_BOOL vbEnabledChannelsOnly,
+        VARIANT * psaChannelKeys );
+    HRESULT GetStationIDsWithInstrumentType (
+        short sFacilityID,
+        _bstr_t bstrInstrumentType,
+        VARIANT_BOOL vbEnabledStationsOnly,
+        VARIANT * psaStationIDs );
+    HRESULT GetFacilityInstrumentTypesList (
+        short sFacilityID,
+        VARIANT * psaInstrumentTypesList );
+    HRESULT SetFacilityMgrErrorLoggingParameters (
+        long lParameters );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_GetFacilityDirectory (
+        short FacilityID,
+        BSTR * pbstrFacilityDirectory ) = 0;
+    virtual HRESULT __stdcall raw_IsChannelEnabled (
+        short sFacilityID,
+        long lStationID,
+        BSTR bstrInstrumentType,
+        short sChannelID,
+        VARIANT_BOOL * pvbEnabled ) = 0;
+    virtual HRESULT __stdcall raw_GetChannelID (
+        short sFacilityID,
+        long lStationID,
+        BSTR bstrInstrumentType,
+        BSTR bstrChannelLongName,
+        short * psChannelID ) = 0;
+    virtual HRESULT __stdcall raw_GetChannelIDs (
+        short sFacilityID,
+        long lStationID,
+        BSTR bstrInstrumentType,
+        VARIANT_BOOL vbEnabledChannelsOnly,
+        VARIANT * psaChannelIDs ) = 0;
+    virtual HRESULT __stdcall raw_GetChannelLongName (
+        short sFacilityID,
+        long lStationID,
+        BSTR bstrInstrumentType,
+        short sChannelID,
+        BSTR * pbstrChannelLongName ) = 0;
+    virtual HRESULT __stdcall raw_GetChannelRecord (
+        short sFacilityID,
+        long lStationID,
+        BSTR bstrInstrumentType,
+        short sChannelID,
+        VARIANT * psaChannelRec ) = 0;
+    virtual HRESULT __stdcall raw_GetChannelShortName (
+        short sFacilityID,
+        long lStationID,
+        BSTR bstrInstrumentType,
+        short sChannelID,
+        BSTR * pbstrChannelShortName ) = 0;
+    virtual HRESULT __stdcall raw_GetFacilityID (
+        BSTR bstrFacilityLongName,
+        short * psFacilityID ) = 0;
+    virtual HRESULT __stdcall raw_GetFacilityIDs (
+        VARIANT_BOOL vbEnabledFacilitiesOnly,
+        VARIANT * psaFacilityIDs ) = 0;
+    virtual HRESULT __stdcall raw_GetFacilityLongName (
+        short sFacilityID,
+        BSTR * pbstrFacilityLongName ) = 0;
+    virtual HRESULT __stdcall raw_GetFacilityRecord (
+        short sFacilityID,
+        VARIANT * psaFacilityRecord ) = 0;
+    virtual HRESULT __stdcall raw_GetFacilityShortName (
+        short sFacilityID,
+        BSTR * pbstrFacilityShortName ) = 0;
+    virtual HRESULT __stdcall raw_GetFacilityNamesList (
+        VARIANT_BOOL vbEnabledFacilitiesOnly,
+        VARIANT_BOOL vbOrderByPriority,
+        VARIANT * psaFacilityNamesList ) = 0;
+    virtual HRESULT __stdcall raw_GetStationNamesList (
+        short sFacilityID,
+        VARIANT_BOOL vbEnabledStationsOnly,
+        VARIANT_BOOL vbOrderByPriority,
+        VARIANT * psaStationNamesList ) = 0;
+    virtual HRESULT __stdcall raw_GetNumberOfChannelsForStation (
+        short sFacilityID,
+        long lStationID,
+        BSTR bstrInstrumentType,
+        VARIANT_BOOL vbEnabledChannelsOnly,
+        short * psNumChannelsForStation ) = 0;
+    virtual HRESULT __stdcall raw_GetNumberOfChannelsForFacility (
+        short sFacilityID,
+        VARIANT_BOOL vbEnabledChannelsOnly,
+        short * psNumChannelsForFacility ) = 0;
+    virtual HRESULT __stdcall raw_GetNumberOfFacilities (
+        VARIANT_BOOL vbEnabledFacilitiesOnly,
+        short * psNumFacilities ) = 0;
+    virtual HRESULT __stdcall raw_GetNumberOfStationsForFacility (
+        short sFacilityID,
+        VARIANT_BOOL vbEnabledStationsOnly,
+        short * psNumStationsForFacility ) = 0;
+    virtual HRESULT __stdcall raw_IsStationEnabled (
+        short sFacilityID,
+        long lStationID,
+        BSTR bstrInstrumentType,
+        VARIANT_BOOL * pvbEnabled ) = 0;
+    virtual HRESULT __stdcall raw_GetStationID (
+        short sFacilityID,
+        BSTR bstrStationLongName,
+        long * plStationID,
+        BSTR * pbstrStationInstType ) = 0;
+    virtual HRESULT __stdcall raw_GetStationIDs (
+        short sFacilityID,
+        VARIANT_BOOL vbEnabledStationsOnly,
+        VARIANT * psaStationIDs ) = 0;
+    virtual HRESULT __stdcall raw_GetStationLongName (
+        short sFacilityID,
+        long lStationID,
+        BSTR bstrInstrumentType,
+        BSTR * pbstrStationLongName ) = 0;
+    virtual HRESULT __stdcall raw_GetStationRecord (
+        short sFacilityID,
+        long lStationID,
+        BSTR bstrInstrumentType,
+        VARIANT * psaStationRecord ) = 0;
+    virtual HRESULT __stdcall raw_GetStationShortName (
+        short sFacilityID,
+        long lStationID,
+        BSTR bstrInstrumentType,
+        BSTR * pbstrStationShortName ) = 0;
+    virtual HRESULT __stdcall raw_IsChannelDefined (
+        short sFacilityID,
+        long lStationID,
+        BSTR bstrInstrumentType,
+        short sChannelID,
+        VARIANT_BOOL * pvbDefined ) = 0;
+    virtual HRESULT __stdcall raw_IsFacilityDefined (
+        short sFacilityID,
+        VARIANT_BOOL * pvbDefined ) = 0;
+    virtual HRESULT __stdcall raw_IsStationDefined (
+        short sFacilityID,
+        long lStationID,
+        BSTR bstrInstrumentType,
+        VARIANT_BOOL * pvbDefined ) = 0;
+    virtual HRESULT __stdcall raw_IsFacilityEnabled (
+        short sFacilityID,
+        VARIANT_BOOL * pvbEnabled ) = 0;
+    virtual HRESULT __stdcall raw_GetChannelIDsForFacility (
+        short sFacilityID,
+        VARIANT_BOOL vbEnabledChannelsOnly,
+        VARIANT * psaChannelKeys ) = 0;
+    virtual HRESULT __stdcall raw_GetStationIDsWithInstrumentType (
+        short sFacilityID,
+        BSTR bstrInstrumentType,
+        VARIANT_BOOL vbEnabledStationsOnly,
+        VARIANT * psaStationIDs ) = 0;
+    virtual HRESULT __stdcall raw_GetFacilityInstrumentTypesList (
+        short sFacilityID,
+        VARIANT * psaInstrumentTypesList ) = 0;
+    virtual HRESULT __stdcall raw_SetFacilityMgrErrorLoggingParameters (
+        long lParameters ) = 0;
+};
+
+struct __declspec(uuid("c713ce2a-006f-4718-b9d0-7a787278749d"))
+FacilityConfigDlgs;
+    // [ default ] interface IFacilityConfigDlgs
+
+struct __declspec(uuid("20a69b33-4b72-465f-9ded-4abe71f08354"))
+IFacilityConfigDlgs : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT ShowFacilityManagerDlg ( );
+    HRESULT ShowInstrumentManagerDlg ( );
+    HRESULT ShowUnitsManagerDlg ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_ShowFacilityManagerDlg ( ) = 0;
+    virtual HRESULT __stdcall raw_ShowInstrumentManagerDlg ( ) = 0;
+    virtual HRESULT __stdcall raw_ShowUnitsManagerDlg ( ) = 0;
+};
+
+struct __declspec(uuid("6c62f5ea-87a8-44f7-b4b4-f38c3b9a0592"))
+InstrumentDefData;
+    // [ default ] interface IInstrumentDefData
+
+struct __declspec(uuid("034f409d-f95b-44ee-b442-fee96f4b5ba6"))
+IInstrumentDefData : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    short GetNumberOfInstrumentsDefined ( );
+    _bstr_t GetInstrumentTypeForFileType (
+        _bstr_t bstrFileType );
+    HRESULT GetListOfAllInstrumentTypes (
+        VARIANT * psaInstrumentTypeList );
+    VARIANT_BOOL IsInstrumentDefined (
+        _bstr_t bstrInstrumentType );
+    _bstr_t GetInstrumentLongName (
+        _bstr_t bstrInstrumentType );
+    HRESULT SetInstrumentDefErrorLoggingParameters (
+        long lParameters );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_GetNumberOfInstrumentsDefined (
+        short * psNumInstruments ) = 0;
+    virtual HRESULT __stdcall raw_GetInstrumentTypeForFileType (
+        BSTR bstrFileType,
+        BSTR * pbstrInstrumentType ) = 0;
+    virtual HRESULT __stdcall raw_GetListOfAllInstrumentTypes (
+        VARIANT * psaInstrumentTypeList ) = 0;
+    virtual HRESULT __stdcall raw_IsInstrumentDefined (
+        BSTR bstrInstrumentType,
+        VARIANT_BOOL * pvbDefined ) = 0;
+    virtual HRESULT __stdcall raw_GetInstrumentLongName (
+        BSTR bstrInstrumentType,
+        BSTR * pbstrInstrumentLongName ) = 0;
+    virtual HRESULT __stdcall raw_SetInstrumentDefErrorLoggingParameters (
+        long lParameters ) = 0;
+};
+
+//
+// Named GUID constants initializations
+//
+
+extern "C" const GUID __declspec(selectany) LIBID_COFACILITYMGRLib =
+    {0x4bf047e7,0xbe4a,0x4eae,{0x89,0x66,0x24,0xbd,0x29,0x14,0xf4,0x4b}};
+extern "C" const GUID __declspec(selectany) CLSID_FacilityMgrData =
+    {0x4a50e0c6,0x7dca,0x4045,{0x8c,0xc4,0xc3,0x0d,0xe6,0x91,0x7f,0x42}};
+extern "C" const GUID __declspec(selectany) IID_IFacilityMgrData =
+    {0x608da78f,0x1a8b,0x411c,{0xaa,0x2e,0xe4,0xd5,0x01,0x8e,0xd0,0x10}};
+extern "C" const GUID __declspec(selectany) CLSID_FacilityConfigDlgs =
+    {0xc713ce2a,0x006f,0x4718,{0xb9,0xd0,0x7a,0x78,0x72,0x78,0x74,0x9d}};
+extern "C" const GUID __declspec(selectany) IID_IFacilityConfigDlgs =
+    {0x20a69b33,0x4b72,0x465f,{0x9d,0xed,0x4a,0xbe,0x71,0xf0,0x83,0x54}};
+extern "C" const GUID __declspec(selectany) CLSID_InstrumentDefData =
+    {0x6c62f5ea,0x87a8,0x44f7,{0xb4,0xb4,0xf3,0x8c,0x3b,0x9a,0x05,0x92}};
+extern "C" const GUID __declspec(selectany) IID_IInstrumentDefData =
+    {0x034f409d,0xf95b,0x44ee,{0xb4,0x42,0xfe,0xe9,0x6f,0x4b,0x5b,0xa6}};
+
+//
+// Wrapper method implementations
+//
+
+#include "c:\code\rad\irs_dev_b2r1\rad\release\CoFacilityMgr.tli"
+
+#pragma pack(pop)

@@ -1,0 +1,168 @@
+
+                                                                    Page  1
+Raima Database Manager Version 4.5, Summary of Database: db_main
+Thu Dec 11 16:59:10 2003
+
+FILE: db_main_fac.dbf
+   Id  : 0
+   Type: data
+   Size of record slots : 128
+   Record slots per page: 7
+   Unused page space    : 124
+
+FILE: db_main_day.dbf
+   Id  : 1
+   Type: data
+   Size of record slots : 106
+   Record slots per page: 9
+   Unused page space    : 66
+
+FILE: db_main_data.dbf
+   Id  : 2
+   Type: data
+   Size of record slots : 2430
+   Record slots per page: 1
+   Unused page space    : 126
+
+FILE: db_main_datad.dbf
+   Id  : 3
+   Type: data
+   Size of record slots : 3830
+   Record slots per page: 1
+   Unused page space    : 262
+
+FILE: db_main_summ.dbf
+   Id  : 4
+   Type: data
+   Size of record slots : 182
+   Record slots per page: 5
+   Unused page space    : 110
+
+FILE: db_main_fac.key
+   Id  : 5
+   Type: key
+   Size of record slots : 12
+   Record slots per page: 84
+   Unused page space    : 6
+
+FILE: db_main_day.key
+   Id  : 6
+   Type: key
+   Size of record slots : 18
+   Record slots per page: 227
+   Unused page space    : 0
+
+FILE: db_main_data.key
+   Id  : 7
+   Type: key
+   Size of record slots : 18
+   Record slots per page: 227
+   Unused page space    : 0
+
+
+                                                                    Page  2
+Raima Database Manager Version 4.5, Summary of Database: db_main
+Thu Dec 11 16:59:10 2003
+
+FILE: db_main_datad.key
+   Id  : 8
+   Type: key
+   Size of record slots : 18
+   Record slots per page: 227
+   Unused page space    : 0
+
+RECORD: db_fac_rec
+   Id  : 0
+   File: db_main_fac.dbf [0]
+   Total set pointers   : 1
+   Total member pointers: 1
+   Offset to data       : 30
+   Size of record       : 84
+   Unused slot space    : 44
+
+RECORD: db_sta_rec
+   Id  : 1
+   File: db_main_fac.dbf [0]
+   Total set pointers   : 2
+   Total member pointers: 1
+   Offset to data       : 42
+   Size of record       : 100
+   Unused slot space    : 28
+
+RECORD: db_chan_rec
+   Id  : 2
+   File: db_main_fac.dbf [0]
+   Total set pointers   : 0
+   Total member pointers: 1
+   Offset to data       : 18
+   Size of record       : 128
+   Unused slot space    : 0
+
+RECORD: db_day_rec
+   Id  : 3
+   File: db_main_day.dbf [1]
+   Total set pointers   : 5
+   Total member pointers: 1
+   Offset to data       : 78
+   Size of record       : 106
+   Unused slot space    : 0
+
+RECORD: db_float_data_rec
+   Id  : 4
+   File: db_main_data.dbf [2]
+   Total set pointers   : 0
+   Total member pointers: 1
+   Offset to data       : 18
+   Size of record       : 2430
+   Unused slot space    : 0
+
+
+                                                                    Page  3
+Raima Database Manager Version 4.5, Summary of Database: db_main
+Thu Dec 11 16:59:10 2003
+
+RECORD: db_double_data_rec
+   Id  : 5
+   File: db_main_datad.dbf [3]
+   Total set pointers   : 0
+   Total member pointers: 1
+   Offset to data       : 18
+   Size of record       : 3830
+   Unused slot space    : 0
+
+RECORD: db_event_rec
+   Id  : 6
+   File: db_main_summ.dbf [4]
+   Total set pointers   : 0
+   Total member pointers: 1
+   Offset to data       : 18
+   Size of record       : 120
+   Unused slot space    : 62
+
+RECORD: db_dir_event_rec
+   Id  : 7
+   File: db_main_summ.dbf [4]
+   Total set pointers   : 0
+   Total member pointers: 1
+   Offset to data       : 18
+   Size of record       : 182
+   Unused slot space    : 0
+
+RECORD: db_mark_rec
+   Id  : 8
+   File: db_main_summ.dbf [4]
+   Total set pointers   : 0
+   Total member pointers: 1
+   Offset to data       : 18
+   Size of record       : 32
+   Unused slot space    : 150
+
+RECORD: system
+   Id  : 9
+   File: db_main_fac.dbf [0]
+   Total set pointers   : 1
+   Total member pointers: 0
+   Offset to data       : 18
+   Size of record       : 18
+   Unused slot space    : 110
+

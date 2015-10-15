@@ -1,0 +1,34 @@
+HKCR
+{
+	Integrated.Review.System
+	{
+		Import
+		{
+			CoBinaryImport.CoBinaryImport.1 = s 'CoBinaryImport Class'
+			{
+				CLSID = s '{C6E7683F-4C2B-4586-BBA5-DFC973644B18}'
+			}
+			CoBinaryImport.CoBinaryImport = s 'CoBinaryImport Class'
+			{
+				CLSID = s '{C6E7683F-4C2B-4586-BBA5-DFC973644B18}'
+				CurVer = s 'CoBinaryImport.CoBinaryImport.1'
+				ImportFileType = s 'BNY'
+				InstrumentName = s 'Binary'
+			}
+		}
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {C6E7683F-4C2B-4586-BBA5-DFC973644B18} = s 'CoBinaryImport Class'
+		{
+			ProgID = s 'Integrated.Review.System\Import\CoBinaryImport.CoBinaryImport.1'
+			VersionIndependentProgID = s 'Integrated.Review.System\Import\CoBinaryImport.CoBinaryImport'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{595D7917-F0FF-461E-AFDE-7FAD53FD90CE}'
+		}
+	}
+}

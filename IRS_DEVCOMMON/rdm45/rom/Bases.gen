@@ -1,0 +1,46 @@
+##
+#
+#  Raima Object Manager 3.0
+#
+#  Build procedure "basedir" file
+#  Used to determine the location of the directory tree under which
+#  various system components are located.
+#
+##
+#
+# Raima Object Manager base directory
+ROMBASE=<YOUR ROM HOME DIR>
+#example ROMBASE=c:\dev\rom30
+#
+#
+##
+#
+# Raima Database Manager base directory
+RDMBASE=<YOUR RDM HOME DIR>
+# example RDMBASE=c:\rdm\rdm45
+#
+# Raima Database Manager version being used
+#   - 321 for 3.21a or before
+#   - 330 for 3.30 or 3.30a
+#   - 331 for 3.31
+#   - 400 for 4.0
+#   - 450 for 4.5
+#   - W32 for Win32
+RDMVER=450
+#RDMVER=W32
+#
+##
+#
+# Velocis (Raima Database Server) base directory
+RDSBASE= <YOUR RDS HOME DIR>
+#
+# Velocis system being used
+#   - SA for Velocis Stand-Alone   -- ROM needs to link with rdssrv.lib
+#   - CS for Velocis Client/Server -- ROM needs to link with rdscli.lib
+RDSVER=CS
+#
+##
+#
+# Build ROM 3.0 libraries with full debug info
+#DEBUG=1
+#

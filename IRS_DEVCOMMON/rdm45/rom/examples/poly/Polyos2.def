@@ -1,0 +1,7 @@
+NAME 		polymrph
+DESCRIPTION	'polymrph'
+EXETYPE         OS2 
+DATA            MULTIPLE NONSHARED
+HEAPSIZE        4096
+STACKSIZE       8192
+

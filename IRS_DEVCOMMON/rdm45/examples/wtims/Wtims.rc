@@ -1,0 +1,109 @@
+/******************************************************************************\
+
+                            TIMS SAMPLE APPLICATION
+
+              COPYRIGHT (C) 1989 - 1991 RAIMA CORP. ALL RIGHTS RESERVED.
+
+\******************************************************************************/
+
+#include <windows.h>
+#include "timsdec.h"
+#include "timsres.h"
+
+/******************************************************************************\
+
+                                 MENU RESOURCE
+
+\******************************************************************************/
+
+IDR_MENU MENU
+BEGIN
+  POPUP      "&View"
+    BEGIN                                
+    MENUITEM  "Items by &Keyword...\tCtrl+K",         IDM_VIEW_ITEMSBYKEYWORD
+    MENUITEM  "Items by &Author...\tCtrl+A",          IDM_VIEW_ITEMSBYAUTHOR
+    END                            
+  POPUP      "&Edit"
+    BEGIN                                                      
+    MENUITEM  "&Insert Info...\tCtrl+I",              IDM_EDIT_INSERTINFO
+    MENUITEM  "&Delete Info...\tCtrl+D",              IDM_EDIT_DELETEINFO
+    END                          
+  POPUP      "&Loan"
+    BEGIN
+    MENUITEM  "&Borrow Book...\tCtrl+B",              IDM_LOAN_BORROWBOOK
+    MENUITEM  "&Return Book...\tCtrl+R",              IDM_LOAN_RETURNBOOK
+    MENUITEM                                          SEPARATOR
+    MENUITEM  "Borrowing&s...\tCtrl+S",               IDM_LOAN_BORROWINGS
+    END                          
+END
+
+/******************************************************************************\
+
+                             ACCELERATOR RESOURCES
+
+\******************************************************************************/
+
+IDR_ACCELERATORS ACCELERATORS
+BEGIN
+    "^K",	IDM_VIEW_ITEMSBYKEYWORD,  ASCII
+    "^A",	IDM_VIEW_ITEMSBYAUTHOR,   ASCII
+    "^I",	IDM_EDIT_INSERTINFO,	  ASCII
+    "^D",	IDM_EDIT_DELETEINFO,	  ASCII
+    "^B",	IDM_LOAN_BORROWBOOK,	  ASCII
+    "^R",	IDM_LOAN_RETURNBOOK,	  ASCII
+    "^S",	IDM_LOAN_BORROWINGS,	  ASCII
+END
+
+/******************************************************************************\
+
+                                STRING RESOURCES 
+
+\******************************************************************************/
+
+STRINGTABLE
+BEGIN
+  IDS_MAINCLASS, "TIMS_MAIN"
+  IDS_ABOUT, "About..."
+  IDS_ADDEDINSTANCE, "WTIMS.EXE is already running."
+  IDS_APPNAME, "TIMS"
+  IDS_MAINCAPTION, "Technical Information Management System (TIMS)"
+  IDS_CANTOPENDATABASE, "Cannot open the database."
+  IDS_SELECTKEYWORD, "Select a keyword from the KeyWords dialog box."
+  IDS_SELECTAUTHOR, "Select an author from the Authors dialog box."
+END
+
+/******************************************************************************\
+
+                                 ICON RESOURCES 
+
+\******************************************************************************/
+
+IDR_ICON ICON wtims.ico    /* window icon resource */
+tims     ICON wtims.ico    /* dialog icon resource */
+
+/******************************************************************************\
+
+                            DIALOG BOX RESOURCES 
+
+\******************************************************************************/
+
+rcinclude DLGABOUT.DLG    /* IDD_ABOUT dialog script */
+
+rcinclude DLGLOANS.DLG    /* IDD_BORROWINGS dialog script */
+
+rcinclude DLGKEYS.DLG     /* IDD_KEYWORDS dialog script */
+
+rcinclude DLGAUTH.DLG     /* IDD_AUTHORS dialog script */
+
+rcinclude DLGVIEW.DLG     /* IDD_VIEWINFO dialog script */
+
+rcinclude DLGINS.DLG      /* IDD_INSERTINFO dialog script */
+
+rcinclude DLGDEL.DLG      /* IDD_DELETEINFO dialog script */
+
+rcinclude DLGBOR.DLG      /* IDD_BORROWBOOK dialog script */
+
+rcinclude DLGRET.DLG      /* IDD_RETURNBOOK dialog script */
+
+/* $Revision:   1.2  $ */
+

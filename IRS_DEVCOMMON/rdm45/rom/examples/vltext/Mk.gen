@@ -1,0 +1,47 @@
+################################################################
+#
+# mk.gen -- makefile dependencies
+#
+################################################################
+
+PROG     = vltext
+SRCDIR   = .
+OBJDIR   = .
+INCDIR   = .
+
+!IF "$(TARGET_TYPE)" == "OS2APP"
+DEFFILE= vltxtos2.def
+!ELSE
+DEFFILE=, vltext.def
+!ENDIF
+
+
+all: vltxt_db.dbd vltext.exe
+
+vltxt_db.dbd: vltxt_db.ddl
+	dbinit 
+
+mkopts.fil: makefile
+	echo $(CCOPTS)  > mkopts.fil
+
+!IF "$(CTYPE)" == "msvc32" || "$(COMPILER)" == "ICC" 
+vltext.exe: mkopts.fil $(OBJDIR)\vltext.obj
+	$(LINK) $(LNKOPTS) $(OBJDIR)\vltext.obj $(LINKEND) $(LINK2)
+!ELSE
+mk.rsp: makefile
+	echo $(OBJDIR)\vltext.obj    > mk.rsp
+	echo vltext.exe              >>mk.rsp
+	echo vltext.map              >>mk.rsp
+	echo $(LINKEND)  + >>mk.rsp
+	echo $(LINK2)  + >>mk.rsp
+
+vltext.exe: mkopts.fil $(OBJDIR)\vltext.obj mk.rsp
+	$(LINK) $(LNKOPTS) @mk.rsp
+        if exist mkopts.fil del mkopts.fil
+        if exist mk.rsp del mk.rsp
+!ENDIF
+
+
+$(OBJDIR)\vltext.obj: $(SRCDIR)\vltext.cpp $(INCDIR)\vltext.hpp
+	$(MKCMD) $(SRCDIR)\vltext.cpp
+

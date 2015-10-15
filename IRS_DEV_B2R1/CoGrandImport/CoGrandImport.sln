@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoGrandImport", "CoGrandImport.vcproj", "{7FFB53BC-90DF-4391-9D34-DEE9D4367373}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release MinDependency
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{7FFB53BC-90DF-4391-9D34-DEE9D4367373}.Debug.ActiveCfg = Debug|Win32
+		{7FFB53BC-90DF-4391-9D34-DEE9D4367373}.Debug.Build.0 = Debug|Win32
+		{7FFB53BC-90DF-4391-9D34-DEE9D4367373}.Release MinDependency.ActiveCfg = Release MinDependency|Win32
+		{7FFB53BC-90DF-4391-9D34-DEE9D4367373}.Release MinDependency.Build.0 = Release MinDependency|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

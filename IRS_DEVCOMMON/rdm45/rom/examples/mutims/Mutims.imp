@@ -1,0 +1,59 @@
+database mutims;
+
+   foreach "author.txt" {
+      record Author {
+         create on 1;
+         field name = 2;
+      }
+      connect AuthorList;
+   }
+
+   foreach "info.txt" {
+      record Info {
+         create on 1;
+         field idcode = 4;
+         field title = 5;
+         field publisher = 6;
+         field pubdate = 7;
+         field type = 8;
+      }
+      record Author {
+         find on 2;
+      }
+      connect HasPublished;
+   }
+
+/*   foreach "text.txt" {
+      record Text {
+         field Text_line = 2;
+      }
+      record Info {
+         find on 1;
+      }
+      connect AbstractText;
+   }
+*/
+
+   foreach "key_word.txt" {
+      record Keyword {
+          create on 1;
+          field word = 2;
+      }
+   }
+
+   foreach "intersec.txt" {
+      record Keyword_Intersect {
+         field infotype = 3;
+      }
+      record Info {
+         find on 2;
+      }
+      record Keyword {
+         find on 1;
+      }
+      connect InfoToKey;
+      connect KeyToInfo;
+   }
+
+end;
+

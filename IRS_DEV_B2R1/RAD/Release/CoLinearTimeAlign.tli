@@ -1,0 +1,122 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8168.0 (45167dfb).
+//
+// c:\code\rad\irs_dev_b2r1\rad\release\CoLinearTimeAlign.tli
+//
+// Wrapper implementations for Win32 type library CoLinearTimeAlign.dll
+// compiler-generated file created 11/05/14 at 18:27:13 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface ITimeAlign wrapper method implementations
+//
+
+inline VARIANT_BOOL ITimeAlign::SetParameters ( short sFacilityID, VARIANT * ParmsVarStruct ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_SetParameters(sFacilityID, ParmsVarStruct, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ITimeAlign::AdjustTimestamps ( short sFacilityID, long lStationID, short sStationType, long lNumItems, DATE * pOriginalTimestamps, DATE * pAdjustedTimestamps ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_AdjustTimestamps(sFacilityID, lStationID, sStationType, lNumItems, pOriginalTimestamps, pAdjustedTimestamps, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ITimeAlign::UnadjustTimestamps ( short sFacilityID, long lStationID, short sStationType, long lNumItems, DATE * pAdjustedTimestamps, DATE * pOriginalTimestamps ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_UnadjustTimestamps(sFacilityID, lStationID, sStationType, lNumItems, pAdjustedTimestamps, pOriginalTimestamps, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ITimeAlign::BackupDataStore ( short sFacilityID, _bstr_t bstrDestinationPath ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_BackupDataStore(sFacilityID, bstrDestinationPath, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT ITimeAlign::CloseDataStore ( ) {
+    HRESULT _hr = raw_CloseDataStore();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline VARIANT_BOOL ITimeAlign::InitializeDataStore ( short sFacilityID, VARIANT_BOOL bQuestion ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_InitializeDataStore(sFacilityID, bQuestion, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ITimeAlign::OpenDataStore ( short sFacilityID ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_OpenDataStore(sFacilityID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT ITimeAlign::GetDataStorePath ( short sFacilityID, BSTR * bstrStorePath ) {
+    HRESULT _hr = raw_GetDataStorePath(sFacilityID, bstrStorePath);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline VARIANT_BOOL ITimeAlign::GetDataStatistics ( short sFacilityID, long lStationID, short sChanID, short sStationType, DATE StartTime, DATE EndTime, DATE * pActualStartTime, DATE * pActualEndTime, long * plNumMembers ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_GetDataStatistics(sFacilityID, lStationID, sChanID, sStationType, StartTime, EndTime, pActualStartTime, pActualEndTime, plNumMembers, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ITimeAlign::RestoreDataStore ( short sFacilityID, _bstr_t bstrSourcePath ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_RestoreDataStore(sFacilityID, bstrSourcePath, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ITimeAlign::GetDataByChannel ( short sFacilityID, long lStationID, short sStationType, short sChannelID, DATE StartTime, DATE EndTime, VARIANT * pvData ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_GetDataByChannel(sFacilityID, lStationID, sStationType, sChannelID, StartTime, EndTime, pvData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ITimeAlign::GetDataByStation ( short sFacilityID, long lStationID, short sStationType, DATE StartTime, DATE EndTime, VARIANT * pvData ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_GetDataByStation(sFacilityID, lStationID, sStationType, StartTime, EndTime, pvData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ITimeAlign::GetDataStoreTimeRange ( short sFacilityID, long lStationID, short sStationType, VARIANT_BOOL bErrDisplay, DATE * FirstTimestamp, DATE * LastTimestamp ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_GetDataStoreTimeRange(sFacilityID, lStationID, sStationType, bErrDisplay, FirstTimestamp, LastTimestamp, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ITimeAlign::GetDaySummaryData ( short sFacilityID, long lStationID, short sStationType, DATE StartTime, DATE EndTime, VARIANT * DayVariantArray ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_GetDaySummaryData(sFacilityID, lStationID, sStationType, StartTime, EndTime, DayVariantArray, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ITimeAlign::GetDayStatistics ( short sFacilityID, long lStationID, short sStationType, DATE StartTime, DATE EndTime, DATE * pActualStartTime, DATE * pActualEndTime, long * plNumMembers ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_GetDayStatistics(sFacilityID, lStationID, sStationType, StartTime, EndTime, pActualStartTime, pActualEndTime, plNumMembers, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ITimeAlign::GetParameters ( short sFacID, VARIANT * ParmsVarStruct ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_GetParameters(sFacID, ParmsVarStruct, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}

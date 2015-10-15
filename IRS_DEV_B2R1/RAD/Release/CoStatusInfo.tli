@@ -1,0 +1,30 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8168.0 (59f14661).
+//
+// c:\code\rad\irs_dev_b2r1\rad\release\CoStatusInfo.tli
+//
+// Wrapper implementations for Win32 type library CoStatusInfo.dll
+// compiler-generated file created 11/05/14 at 18:27:13 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface IStatusInfo wrapper method implementations
+//
+
+inline HRESULT IStatusInfo::ShowStatusInfoDlg ( _bstr_t Title ) {
+    HRESULT _hr = raw_ShowStatusInfoDlg(Title);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IStatusInfo::CloseStatusInfoDlg ( ) {
+    HRESULT _hr = raw_CloseStatusInfoDlg();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IStatusInfo::AddString ( _bstr_t bString ) {
+    HRESULT _hr = raw_AddString(bString);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
