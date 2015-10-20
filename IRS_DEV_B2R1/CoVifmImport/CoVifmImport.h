@@ -3,18 +3,18 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 7.00.0500 */
-/* at Wed Jan 29 10:25:57 2014
+ /* File created by MIDL compiler version 8.00.0603 */
+/* at Tue Oct 20 14:48:07 2015
  */
-/* Compiler settings for .\CoVifmImport.idl:
-    Oicf, W1, Zp8, env=Win32 (32b run)
+/* Compiler settings for CoVifmImport.idl:
+    Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 
          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
          DECLSPEC_UUID(), MIDL_INTERFACE()
 */
-//@@MIDL_FILE_HEADING(  )
+/* @@MIDL_FILE_HEADING(  ) */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
 
@@ -48,6 +48,7 @@
 #ifndef __IVifmImport_FWD_DEFINED__
 #define __IVifmImport_FWD_DEFINED__
 typedef interface IVifmImport IVifmImport;
+
 #endif 	/* __IVifmImport_FWD_DEFINED__ */
 
 
@@ -205,6 +206,7 @@ EXTERN_C const IID IID_IVifmImport;
         
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IVifmImportVtbl
@@ -214,8 +216,8 @@ EXTERN_C const IID IID_IVifmImport;
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             IVifmImport * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ 
-            __RPC__deref_out  void **ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IVifmImport * This);
@@ -243,14 +245,22 @@ EXTERN_C const IID IID_IVifmImport;
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             IVifmImport * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *AddData )( 
             IVifmImport * This,

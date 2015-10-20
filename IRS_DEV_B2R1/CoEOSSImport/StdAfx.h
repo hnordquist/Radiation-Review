@@ -27,14 +27,16 @@
 extern CComModule _Module;
 #include <atlcom.h>
 
-#import <msado15.dll> \
+#import <C:\Program Files (x86)\Common Files\System\ado\msado15.dll> \
 rename( "EOF", "adoEOF" ) \
 rename_namespace( "ADODB" )
 
-#import <msadox.dll> \
+using namespace ADODB;
+
+#import <C:\Program Files (x86)\Common Files\System\ado\msadox.dll> \
 rename( "EOF", "adoxEOF" ) \
 rename_namespace( "ADOX" )
 
-#import <msjro.dll> \
+#import <C:\Program Files (x86)\Common Files\System\ado\msjro.dll> \
 rename( "EOF", "jroEOF" ) \
 rename_namespace( "JRO" )

@@ -4,7 +4,7 @@ Radiation Review 3.2.1.0
 October 15, 2015
 
 This work was supported by the United States Member State Support Program to IAEA Safeguards;
-the U.S. Department of Entergy, Office of Nonproliferation and National Security, International
+the U.S. Department of Energy, Office of Nonproliferation and National Security, International
 Safeguards Division; and the U.S. Department of Energy, Office of Safeguards and Security.
 
 LA-CC-14-040. This software was exported from the United States in accordance with the Export

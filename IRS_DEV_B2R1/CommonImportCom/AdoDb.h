@@ -4,11 +4,13 @@
 #pragma warning ( push)
 #pragma warning ( disable : 4146)
 
-#import <msado15.dll> \
+#import <C:\Program Files (x86)\Common Files\System\ado\msado15.dll> \
 rename( "EOF", "adoEOF" ) \
 rename_namespace( "ADODB" )
 
-#import <msjro.dll> \
+using namespace ADODB;
+
+#import <C:\Program Files (x86)\Common Files\System\ado\msjro.dll> \
 rename( "EOF", "jroEOF" ) \
 rename_namespace( "JRO" )
 

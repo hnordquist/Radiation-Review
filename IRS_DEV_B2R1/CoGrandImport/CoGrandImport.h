@@ -1,26 +1,27 @@
 
-#pragma warning( disable: 4049 )  /* more than 64k source lines */
 
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 6.00.0347 */
-/* at Wed Nov 12 09:27:07 2014
+ /* File created by MIDL compiler version 8.00.0603 */
+/* at Tue Oct 20 14:48:07 2015
  */
 /* Compiler settings for CoGrandImport.idl:
-    Oicf, W1, Zp8, env=Win32 (32b run)
-    protocol : dce , ms_ext, c_ext
+    Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
+    protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 
          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
          DECLSPEC_UUID(), MIDL_INTERFACE()
 */
-//@@MIDL_FILE_HEADING(  )
+/* @@MIDL_FILE_HEADING(  ) */
+
+#pragma warning( disable: 4049 )  /* more than 64k source lines */
 
 
 /* verify that the <rpcndr.h> version is high enough to compile this file*/
 #ifndef __REQUIRED_RPCNDR_H_VERSION__
-#define __REQUIRED_RPCNDR_H_VERSION__ 440
+#define __REQUIRED_RPCNDR_H_VERSION__ 475
 #endif
 
 #include "rpc.h"
@@ -47,6 +48,7 @@
 #ifndef __IGrandImport_FWD_DEFINED__
 #define __IGrandImport_FWD_DEFINED__
 typedef interface IGrandImport IGrandImport;
+
 #endif 	/* __IGrandImport_FWD_DEFINED__ */
 
 
@@ -70,8 +72,6 @@ typedef struct GrandImport GrandImport;
 extern "C"{
 #endif 
 
-void * __RPC_USER MIDL_user_allocate(size_t);
-void __RPC_USER MIDL_user_free( void * ); 
 
 #ifndef __IGrandImport_INTERFACE_DEFINED__
 #define __IGrandImport_INTERFACE_DEFINED__
@@ -226,6 +226,7 @@ EXTERN_C const IID IID_IGrandImport;
         
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IGrandImportVtbl
@@ -235,7 +236,8 @@ EXTERN_C const IID IID_IGrandImport;
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             IGrandImport * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void **ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IGrandImport * This);
@@ -257,20 +259,28 @@ EXTERN_C const IID IID_IGrandImport;
             IGrandImport * This,
             /* [in] */ REFIID riid,
             /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [in] */ UINT cNames,
+            /* [range][in] */ UINT cNames,
             /* [in] */ LCID lcid,
             /* [size_is][out] */ DISPID *rgDispId);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             IGrandImport * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *AddData )( 
             IGrandImport * This,
@@ -444,433 +454,99 @@ EXTERN_C const IID IID_IGrandImport;
 
 
 #define IGrandImport_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IGrandImport_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IGrandImport_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IGrandImport_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
 #define IGrandImport_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
 #define IGrandImport_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
 #define IGrandImport_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
 #define IGrandImport_AddData(This,sFacilityID,bstrFilename,bOverwrite,bstrResult,pbResult)	\
-    (This)->lpVtbl -> AddData(This,sFacilityID,bstrFilename,bOverwrite,bstrResult,pbResult)
+    ( (This)->lpVtbl -> AddData(This,sFacilityID,bstrFilename,bOverwrite,bstrResult,pbResult) ) 
 
 #define IGrandImport_BackupDataStore(This,sFacilityID,bstrDestinationPath,bQuestion,bDefault,pbResult)	\
-    (This)->lpVtbl -> BackupDataStore(This,sFacilityID,bstrDestinationPath,bQuestion,bDefault,pbResult)
+    ( (This)->lpVtbl -> BackupDataStore(This,sFacilityID,bstrDestinationPath,bQuestion,bDefault,pbResult) ) 
 
 #define IGrandImport_CloseDataStore(This)	\
-    (This)->lpVtbl -> CloseDataStore(This)
+    ( (This)->lpVtbl -> CloseDataStore(This) ) 
 
 #define IGrandImport_CreateNewDataStore(This,sFacilityID,pbResult)	\
-    (This)->lpVtbl -> CreateNewDataStore(This,sFacilityID,pbResult)
+    ( (This)->lpVtbl -> CreateNewDataStore(This,sFacilityID,pbResult) ) 
 
 #define IGrandImport_DeleteData(This,sFacilityID,lStationID,dtStartDate,dtEndDate,pbStatus)	\
-    (This)->lpVtbl -> DeleteData(This,sFacilityID,lStationID,dtStartDate,dtEndDate,pbStatus)
+    ( (This)->lpVtbl -> DeleteData(This,sFacilityID,lStationID,dtStartDate,dtEndDate,pbStatus) ) 
 
 #define IGrandImport_DeleteDataStore(This,sFacilityID,pbStatus)	\
-    (This)->lpVtbl -> DeleteDataStore(This,sFacilityID,pbStatus)
+    ( (This)->lpVtbl -> DeleteDataStore(This,sFacilityID,pbStatus) ) 
 
 #define IGrandImport_GetDataByChannel(This,sFacilityID,lStationID,sChannelID,StartTime,EndTime,pvData,pbResult)	\
-    (This)->lpVtbl -> GetDataByChannel(This,sFacilityID,lStationID,sChannelID,StartTime,EndTime,pvData,pbResult)
+    ( (This)->lpVtbl -> GetDataByChannel(This,sFacilityID,lStationID,sChannelID,StartTime,EndTime,pvData,pbResult) ) 
 
 #define IGrandImport_GetDataByStation(This,sFacilityID,lStationID,StartTime,EndTime,pvData,pbResult)	\
-    (This)->lpVtbl -> GetDataByStation(This,sFacilityID,lStationID,StartTime,EndTime,pvData,pbResult)
+    ( (This)->lpVtbl -> GetDataByStation(This,sFacilityID,lStationID,StartTime,EndTime,pvData,pbResult) ) 
 
 #define IGrandImport_GetDataStatistics(This,sFacilityID,lStationID,sChannelID,StartTime,EndTime,pActualStartTime,pActualEndTime,plNumMembers,pbResult)	\
-    (This)->lpVtbl -> GetDataStatistics(This,sFacilityID,lStationID,sChannelID,StartTime,EndTime,pActualStartTime,pActualEndTime,plNumMembers,pbResult)
+    ( (This)->lpVtbl -> GetDataStatistics(This,sFacilityID,lStationID,sChannelID,StartTime,EndTime,pActualStartTime,pActualEndTime,plNumMembers,pbResult) ) 
 
 #define IGrandImport_GetDataStorePath(This,sFacilityID,bstrStorePath)	\
-    (This)->lpVtbl -> GetDataStorePath(This,sFacilityID,bstrStorePath)
+    ( (This)->lpVtbl -> GetDataStorePath(This,sFacilityID,bstrStorePath) ) 
 
 #define IGrandImport_GetDataStoreSize(This,sFacilityID,pdSizeInBytes,pbResult)	\
-    (This)->lpVtbl -> GetDataStoreSize(This,sFacilityID,pdSizeInBytes,pbResult)
+    ( (This)->lpVtbl -> GetDataStoreSize(This,sFacilityID,pdSizeInBytes,pbResult) ) 
 
 #define IGrandImport_GetDataStoreStatus(This,sFacilityID,plStatus)	\
-    (This)->lpVtbl -> GetDataStoreStatus(This,sFacilityID,plStatus)
+    ( (This)->lpVtbl -> GetDataStoreStatus(This,sFacilityID,plStatus) ) 
 
 #define IGrandImport_GetDataStoreTimeRange(This,sFacilityID,lStationID,bErrDisplay,FirstTimestamp,LastTimestamp,pbResult)	\
-    (This)->lpVtbl -> GetDataStoreTimeRange(This,sFacilityID,lStationID,bErrDisplay,FirstTimestamp,LastTimestamp,pbResult)
+    ( (This)->lpVtbl -> GetDataStoreTimeRange(This,sFacilityID,lStationID,bErrDisplay,FirstTimestamp,LastTimestamp,pbResult) ) 
 
 #define IGrandImport_GetDayStatistics(This,sFacilityID,lStationID,StartTime,EndTime,pActualStartTime,pActualEndTime,plNumMembers,pbResult)	\
-    (This)->lpVtbl -> GetDayStatistics(This,sFacilityID,lStationID,StartTime,EndTime,pActualStartTime,pActualEndTime,plNumMembers,pbResult)
+    ( (This)->lpVtbl -> GetDayStatistics(This,sFacilityID,lStationID,StartTime,EndTime,pActualStartTime,pActualEndTime,plNumMembers,pbResult) ) 
 
 #define IGrandImport_GetDaySummaryData(This,sFacilityID,lStationID,StartTime,EndTime,pvDay,pbResult)	\
-    (This)->lpVtbl -> GetDaySummaryData(This,sFacilityID,lStationID,StartTime,EndTime,pvDay,pbResult)
+    ( (This)->lpVtbl -> GetDaySummaryData(This,sFacilityID,lStationID,StartTime,EndTime,pvDay,pbResult) ) 
 
 #define IGrandImport_GetFilesList(This,sFacilityID,bstrRootDir,bIncludeSubDirs,bMostRecent,psaFilesList)	\
-    (This)->lpVtbl -> GetFilesList(This,sFacilityID,bstrRootDir,bIncludeSubDirs,bMostRecent,psaFilesList)
+    ( (This)->lpVtbl -> GetFilesList(This,sFacilityID,bstrRootDir,bIncludeSubDirs,bMostRecent,psaFilesList) ) 
 
 #define IGrandImport_GetLastError(This,sFacilityID,pbstrErrortext,plError)	\
-    (This)->lpVtbl -> GetLastError(This,sFacilityID,pbstrErrortext,plError)
+    ( (This)->lpVtbl -> GetLastError(This,sFacilityID,pbstrErrortext,plError) ) 
 
 #define IGrandImport_GetParameters(This,sFacilityID,pvParms,pbResult)	\
-    (This)->lpVtbl -> GetParameters(This,sFacilityID,pvParms,pbResult)
+    ( (This)->lpVtbl -> GetParameters(This,sFacilityID,pvParms,pbResult) ) 
 
 #define IGrandImport_InitializeDataStore(This,sFacilityID,bQuestion,pbSuccess)	\
-    (This)->lpVtbl -> InitializeDataStore(This,sFacilityID,bQuestion,pbSuccess)
+    ( (This)->lpVtbl -> InitializeDataStore(This,sFacilityID,bQuestion,pbSuccess) ) 
 
 #define IGrandImport_OpenDataStore(This,sFacilityID,pbSuccess)	\
-    (This)->lpVtbl -> OpenDataStore(This,sFacilityID,pbSuccess)
+    ( (This)->lpVtbl -> OpenDataStore(This,sFacilityID,pbSuccess) ) 
 
 #define IGrandImport_RestoreDataStore(This,sFacilityID,bstrSourcePath,bQuestion,bDefault,pbResult)	\
-    (This)->lpVtbl -> RestoreDataStore(This,sFacilityID,bstrSourcePath,bQuestion,bDefault,pbResult)
+    ( (This)->lpVtbl -> RestoreDataStore(This,sFacilityID,bstrSourcePath,bQuestion,bDefault,pbResult) ) 
 
 #define IGrandImport_SetParameters(This,sFacilityID,vParms,pbResult)	\
-    (This)->lpVtbl -> SetParameters(This,sFacilityID,vParms,pbResult)
+    ( (This)->lpVtbl -> SetParameters(This,sFacilityID,vParms,pbResult) ) 
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_AddData_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [in] */ BSTR bstrFilename,
-    /* [in] */ VARIANT_BOOL bOverwrite,
-    /* [out] */ BSTR *bstrResult,
-    /* [retval][out] */ VARIANT_BOOL *pbResult);
-
-
-void __RPC_STUB IGrandImport_AddData_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_BackupDataStore_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [in] */ BSTR bstrDestinationPath,
-    /* [in] */ VARIANT_BOOL bQuestion,
-    /* [in] */ VARIANT_BOOL bDefault,
-    /* [retval][out] */ VARIANT_BOOL *pbResult);
-
-
-void __RPC_STUB IGrandImport_BackupDataStore_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_CloseDataStore_Proxy( 
-    IGrandImport * This);
-
-
-void __RPC_STUB IGrandImport_CloseDataStore_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_CreateNewDataStore_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [retval][out] */ VARIANT_BOOL *pbResult);
-
-
-void __RPC_STUB IGrandImport_CreateNewDataStore_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_DeleteData_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [in] */ long lStationID,
-    /* [in] */ DATE dtStartDate,
-    /* [in] */ DATE dtEndDate,
-    /* [retval][out] */ VARIANT_BOOL *pbStatus);
-
-
-void __RPC_STUB IGrandImport_DeleteData_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_DeleteDataStore_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [retval][out] */ VARIANT_BOOL *pbStatus);
-
-
-void __RPC_STUB IGrandImport_DeleteDataStore_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_GetDataByChannel_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [in] */ long lStationID,
-    /* [in] */ short sChannelID,
-    /* [in] */ DATE StartTime,
-    /* [in] */ DATE EndTime,
-    /* [out][in] */ VARIANT *pvData,
-    /* [retval][out] */ VARIANT_BOOL *pbResult);
-
-
-void __RPC_STUB IGrandImport_GetDataByChannel_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_GetDataByStation_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [in] */ long lStationID,
-    /* [in] */ DATE StartTime,
-    /* [in] */ DATE EndTime,
-    /* [out][in] */ VARIANT *pvData,
-    /* [retval][out] */ VARIANT_BOOL *pbResult);
-
-
-void __RPC_STUB IGrandImport_GetDataByStation_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_GetDataStatistics_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [in] */ long lStationID,
-    /* [in] */ short sChannelID,
-    /* [in] */ DATE StartTime,
-    /* [in] */ DATE EndTime,
-    /* [out] */ DATE *pActualStartTime,
-    /* [out] */ DATE *pActualEndTime,
-    /* [out] */ long *plNumMembers,
-    /* [retval][out] */ VARIANT_BOOL *pbResult);
-
-
-void __RPC_STUB IGrandImport_GetDataStatistics_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_GetDataStorePath_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [retval][out] */ BSTR *bstrStorePath);
-
-
-void __RPC_STUB IGrandImport_GetDataStorePath_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_GetDataStoreSize_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [out] */ double *pdSizeInBytes,
-    /* [retval][out] */ VARIANT_BOOL *pbResult);
-
-
-void __RPC_STUB IGrandImport_GetDataStoreSize_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_GetDataStoreStatus_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [retval][out] */ long *plStatus);
-
-
-void __RPC_STUB IGrandImport_GetDataStoreStatus_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_GetDataStoreTimeRange_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [in] */ long lStationID,
-    /* [in] */ VARIANT_BOOL bErrDisplay,
-    /* [out] */ DATE *FirstTimestamp,
-    /* [out] */ DATE *LastTimestamp,
-    /* [retval][out] */ VARIANT_BOOL *pbResult);
-
-
-void __RPC_STUB IGrandImport_GetDataStoreTimeRange_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_GetDayStatistics_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [in] */ long lStationID,
-    /* [in] */ DATE StartTime,
-    /* [in] */ DATE EndTime,
-    /* [out] */ DATE *pActualStartTime,
-    /* [out] */ DATE *pActualEndTime,
-    /* [out] */ long *plNumMembers,
-    /* [retval][out] */ VARIANT_BOOL *pbResult);
-
-
-void __RPC_STUB IGrandImport_GetDayStatistics_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_GetDaySummaryData_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [in] */ long lStationID,
-    /* [in] */ DATE StartTime,
-    /* [in] */ DATE EndTime,
-    /* [out] */ VARIANT *pvDay,
-    /* [retval][out] */ VARIANT_BOOL *pbResult);
-
-
-void __RPC_STUB IGrandImport_GetDaySummaryData_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_GetFilesList_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [in] */ BSTR bstrRootDir,
-    /* [in] */ VARIANT_BOOL bIncludeSubDirs,
-    /* [in] */ VARIANT_BOOL bMostRecent,
-    /* [out] */ VARIANT *psaFilesList);
-
-
-void __RPC_STUB IGrandImport_GetFilesList_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_GetLastError_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [out][in] */ BSTR *pbstrErrortext,
-    /* [retval][out] */ long *plError);
-
-
-void __RPC_STUB IGrandImport_GetLastError_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_GetParameters_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [out] */ VARIANT *pvParms,
-    /* [retval][out] */ VARIANT_BOOL *pbResult);
-
-
-void __RPC_STUB IGrandImport_GetParameters_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_InitializeDataStore_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [in] */ VARIANT_BOOL bQuestion,
-    /* [retval][out] */ VARIANT_BOOL *pbSuccess);
-
-
-void __RPC_STUB IGrandImport_InitializeDataStore_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_OpenDataStore_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [retval][out] */ VARIANT_BOOL *pbSuccess);
-
-
-void __RPC_STUB IGrandImport_OpenDataStore_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_RestoreDataStore_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [in] */ BSTR bstrSourcePath,
-    /* [in] */ VARIANT_BOOL bQuestion,
-    /* [in] */ VARIANT_BOOL bDefault,
-    /* [retval][out] */ VARIANT_BOOL *pbResult);
-
-
-void __RPC_STUB IGrandImport_RestoreDataStore_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [helpstring][id] */ HRESULT STDMETHODCALLTYPE IGrandImport_SetParameters_Proxy( 
-    IGrandImport * This,
-    /* [in] */ short sFacilityID,
-    /* [in] */ VARIANT vParms,
-    /* [retval][out] */ VARIANT_BOOL *pbResult);
-
-
-void __RPC_STUB IGrandImport_SetParameters_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
 
 
 

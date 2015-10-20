@@ -3,11 +3,11 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 7.00.0555 */
-/* at Fri Aug 06 11:14:13 2010
+ /* File created by MIDL compiler version 8.00.0603 */
+/* at Tue Oct 20 14:48:07 2015
  */
 /* Compiler settings for CoEOSSImport.idl:
-    Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
+    Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 
@@ -48,6 +48,7 @@
 #ifndef __IEOSSImport_FWD_DEFINED__
 #define __IEOSSImport_FWD_DEFINED__
 typedef interface IEOSSImport IEOSSImport;
+
 #endif 	/* __IEOSSImport_FWD_DEFINED__ */
 
 
@@ -225,6 +226,7 @@ EXTERN_C const IID IID_IEOSSImport;
         
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IEOSSImportVtbl
@@ -235,7 +237,7 @@ EXTERN_C const IID IID_IEOSSImport;
             IEOSSImport * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            __RPC__deref_out  void **ppvObject);
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IEOSSImport * This);
@@ -263,14 +265,22 @@ EXTERN_C const IID IID_IEOSSImport;
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             IEOSSImport * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *AddData )( 
             IEOSSImport * This,

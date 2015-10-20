@@ -10,8 +10,8 @@
 #endif
 
 #include "imports.h"
-#import <CoGrandImport.dll>	no_namespace named_guids
-#import <CoVifmImport.dll>			no_namespace named_guids
+#import <c:\irs\comlibs\CoGrandImport.dll>			no_namespace named_guids
+#import <c:\irs\comlibs\CoVifmImport.dll>			no_namespace named_guids
 
 #include "resource.h"
 
