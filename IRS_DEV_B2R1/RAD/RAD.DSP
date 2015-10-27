@@ -43,8 +43,7 @@ RSC=rc.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /YX /FD /c
-# ADD CPP /nologo /MT /W3 /GX /Zi /O2 /I "..\Common" /I "..\CommonImportCom" /I "..\..\IRS_DEVCOMMON\winclude32" /I "..\..\IRS_DEVCOMMON\zapp3" /I "..\..\IRS_DEVCOMMON\rdm45\include" /I "..\..\IRS_DEVCOMMON\Zapp3\ZAPPH" /I "..\..\IRS_DEVCOMMON\Check_Signature" /I "c:\Program Files\MSXML 6.0\inc" /I "\Program Files\Common Files\System\ado" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "Z_NP" /D "RW_NO_STL" /Fr /FD /c
-# SUBTRACT CPP /X
+# ADD CPP /nologo /MT /W3 /GX /Zi /O2 /I "..\Common" /I "..\CommonImportCom" /I "..\..\IRS_DEVCOMMON\winclude32" /I "..\..\IRS_DEVCOMMON\zapp3" /I "..\..\IRS_DEVCOMMON\rdm45\include" /I "..\..\IRS_DEVCOMMON\Zapp3\ZAPPH" /I "..\..\IRS_DEVCOMMON\Check_Signature" /I "\Program Files\Common Files\System\ado" /I "..\..\Rad_Coms" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "Z_NP" /D "RW_NO_STL" /Fr /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
 # ADD BASE RSC /l 0x409 /d "NDEBUG"
@@ -54,8 +53,8 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /machine:I386
-# ADD LINK32 ..\..\IRS_DEVCOMMON\Winlib32\plot.lib nafxcw.lib imagehlp.lib ..\..\IRS_DEVCOMMON\Winlib32\gen32.lib ..\..\IRS_DEVCOMMON\Winlib32\gui32.lib ..\..\IRS_DEVCOMMON\Check_Signature\Check_Signature.lib ..\..\IRS_DEVCOMMON\rdm45\lib\vwin\rdm45w32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:yes /debug /machine:I386 /nodefaultlib:"nafxcw.lib" /nodefaultlib:"libc.lib" /nodefaultlib:"msvcrt.lib" /out:"c:\irs\rad\RAD.exe"
-# SUBTRACT LINK32 /pdb:none /map
+# ADD LINK32 ..\..\IRS_DEVCOMMON\Winlib32\plot.lib nafxcw.lib imagehlp.lib ..\..\IRS_DEVCOMMON\Winlib32\gen32.lib ..\..\IRS_DEVCOMMON\Winlib32\gui32.lib ..\..\IRS_DEVCOMMON\Check_Signature\Check_Signature.lib ..\..\IRS_DEVCOMMON\rdm45\lib\vwin\rdm45w32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /machine:I386 /nodefaultlib:"nafxcw.lib" /nodefaultlib:"libc.lib" /nodefaultlib:"msvcrt.lib"
+# SUBTRACT LINK32 /pdb:none /incremental:yes /map /debug
 
 !ELSEIF  "$(CFG)" == "RAD - Win32 Debug"
 
@@ -71,7 +70,7 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GX /Zi /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /YX /FD /c
-# ADD CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\Common" /I "..\CommonImportCom" /I "..\..\IRS_DEVCOMMON\winclude32" /I "..\..\IRS_DEVCOMMON\zapp3" /I "..\..\IRS_DEVCOMMON\rdm45\include" /I "..\..\IRS_DEVCOMMON\Zapp3\ZAPPH" /I "..\..\IRS_DEVCOMMON\Check_Signature" /I "c:\Program Files\MSXML 6.0\inc" /I "\Program Files\Common Files\System\ado" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "Z_NP" /D "RW_NO_STL" /D "MSC" /FR /FD /c
+# ADD CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\Common" /I "..\CommonImportCom" /I "..\..\IRS_DEVCOMMON\winclude32" /I "..\..\IRS_DEVCOMMON\zapp3" /I "..\..\IRS_DEVCOMMON\rdm45\include" /I "..\..\IRS_DEVCOMMON\Zapp3\ZAPPH" /I "..\..\IRS_DEVCOMMON\Check_Signature" /I "\Program Files\Common Files\System\ado" /I "..\..\rad_coms" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "Z_NP" /D "RW_NO_STL" /D "MSC" /FR /FD /c
 # SUBTRACT CPP /X
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
@@ -82,7 +81,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /debug /machine:I386 /pdbtype:sept
-# ADD LINK32 ..\..\IRS_DEVCOMMON\Winlib32\plot.lib nafxcwd.lib imagehlp.lib ..\..\IRS_DEVCOMMON\Winlib32\gen32.lib ..\..\IRS_DEVCOMMON\Winlib32\gui32.lib ..\..\IRS_DEVCOMMON\Check_Signature\Check_Signature.lib ..\..\IRS_DEVCOMMON\rdm45\lib\vwin\rdm45w32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /debug /machine:I386 /nodefaultlib:"nafxcwd.lib" /nodefaultlib:"libc.lib" /nodefaultlib:"msvcrtd.lib" /out:"c:\irs\rad\RAD.dbg.exe"
+# ADD LINK32 ..\..\IRS_DEVCOMMON\Winlib32\plot.lib nafxcwd.lib imagehlp.lib ..\..\IRS_DEVCOMMON\Winlib32\gen32.lib ..\..\IRS_DEVCOMMON\Winlib32\gui32.lib ..\..\IRS_DEVCOMMON\Check_Signature\Check_Signature.lib ..\..\IRS_DEVCOMMON\rdm45\lib\vwin\rdm45w32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /debug /machine:I386 /nodefaultlib:"nafxcwd.lib" /nodefaultlib:"libc.lib" /nodefaultlib:"msvcrtd.lib"
 # SUBTRACT LINK32 /pdb:none /map
 
 !ENDIF 

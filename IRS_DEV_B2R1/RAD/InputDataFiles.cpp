@@ -330,6 +330,7 @@ int InputAllFiles(char *szOrigPaths, char *szOrigWildCards, BOOL bOverwrite, BOO
 }
 
 
+extern int MapCheckSigResultWRV(int csr, bool lenient = false);
 
        
 /*===========================================================================
@@ -548,69 +549,72 @@ int InputTodaysFiles(char *szOrigPaths, char *szOrigWildCards, BOOL bOverwrite, 
 						// read the header to figure out which day this file is from
 						status = ReadHeader(szNameToMatch, &StaID, &iYr, &iMon, &iDay, &pFile, &dDum, &dDum);
 						if (pFile != NULL) fclose(pFile);
-				switch (status)
-				{
-				case 0:
-					break;
-				case uiUNKNOWN_CA:
-					{
-						glImportWinPtr->Printf("\nFile %s signed by an unknown CA.", szNameToMatch);
-						bContinue = true;
-						break;
-					}
-				case uiINVALID_SIGNATURE:
-					{
-						glImportWinPtr->Printf("\nFile %s has an invalid signature.", szNameToMatch);
-						bContinue = true;
-						break;
-					}
-				case uiLIBRARY_ERROR:
-					{
-						glImportWinPtr->Printf("\nCheckSignature library error reading %s.", szNameToMatch);
-						bContinue = true;
-						break;
-					}
-				case uiNO_INPUT_FILE:
-					{
-						glImportWinPtr->Printf("\nFile %s does not exist.", szNameToMatch);
-						bContinue = false;
-						break;
-					}
-				case uiEMPTY_INPUT_FILE:
-					{
-						glImportWinPtr->Printf("\nFile %s is empty.", szNameToMatch);
-						bContinue = false;
-						break;
-					}
-				case uiIO_ERROR:
-					{
-						glImportWinPtr->Printf("\nIO error reading file %s.", szNameToMatch);
-						bContinue = false;
-						break;
-					}
-				case uiFILE_INVALID:
-					{
-						glImportWinPtr->Printf("\nFile %s is invalid.", szNameToMatch);
-						bContinue = false;
-						break;
-					}
+						switch (MapCheckSigResultWRV(status, true))  // using the lenient interpretation of various errors here
+						{
+						case 0:
+							break;
+						case 1:
+							bContinue = true;
+							break;
+						case uiUNKNOWN_CA:
+							{
+								glImportWinPtr->Printf("\nFile %s signed by an unknown CA.", szNameToMatch);
+								bContinue = true;
+								break;
+							}
+						case uiINVALID_SIGNATURE:
+							{
+								glImportWinPtr->Printf("\nFile %s has an invalid signature.", szNameToMatch);
+								bContinue = true;
+								break;
+							}
+						case uiLIBRARY_ERROR:
+							{
+								glImportWinPtr->Printf("\nCheckSignature library error reading %s.", szNameToMatch);
+								bContinue = true;
+								break;
+							}
+						case uiNO_INPUT_FILE:
+							{
+								glImportWinPtr->Printf("\nFile %s does not exist.", szNameToMatch);
+								bContinue = false;
+								break;
+							}
+						case uiEMPTY_INPUT_FILE:
+							{
+								glImportWinPtr->Printf("\nFile %s is empty.", szNameToMatch);
+								bContinue = false;
+								break;
+							}
+						case uiIO_ERROR:
+							{
+								glImportWinPtr->Printf("\nIO error reading file %s.", szNameToMatch);
+								bContinue = false;
+								break;
+							}
+						case uiFILE_INVALID:
+							{
+								glImportWinPtr->Printf("\nFile %s is invalid.", szNameToMatch);
+								bContinue = false;
+								break;
+							}
 
-				default: {
-						
-					glImportWinPtr->Printf("\nImport Error Reading File Header for %s", szNameToMatch);
-										// investigate the error further to see if something is wrong with the drive
-										lFileHandle = _findfirst(szNameToMatch, &file); /* get all file info */
-										_findclose(lFileHandle);
-										if (lFileHandle == -1L) {
-											Msg.Printf("A serious error was encountered with file %s.  The import will abort.");
-											if (glImportWinPtr != NULL) glImportWinPtr->Printf("\nImport Aborted Due to System Error.");
-											bContinue = false;
-											break;
-										}
-										iNumImported++; 
-										k++;
-										continue;
-									}
+						default: 
+							{						
+								glImportWinPtr->Printf("\nImport Error Reading File Header for %s", szNameToMatch);
+								// investigate the error further to see if something is wrong with the drive
+								lFileHandle = _findfirst(szNameToMatch, &file); /* get all file info */
+								_findclose(lFileHandle);
+								if (lFileHandle == -1L) {
+									Msg.Printf("A serious error was encountered with file %s.  The import will abort.");
+									if (glImportWinPtr != NULL) glImportWinPtr->Printf("\nImport Aborted Due to System Error.");
+									bContinue = false;
+									break;
+								}
+								iNumImported++; 
+								k++;
+								continue;
+							}
 						}
 						sprintf(szDateStr,"%02d.%02d.%02d", iYr, iMon, iDay);          
 						//dFileDay = Date.DateTimeStrsToDATETimestamp(szDateStr, "00:00:00");

@@ -83,6 +83,9 @@ typedef struct tagLANLHEADER
 	char	unused2[43];
 } LANLHEADER;
 #pragma pack(8)
+
+int MapCheckSigResultWRV(int csr, bool lenient);
+
 /*===========================================================================
  *
  *  Name	 : ReadBIDHeader
@@ -140,7 +143,7 @@ static int ReadBIDHeader(char *szFilename, struct IDStruct *pStaID,int *piYr, in
 	//3 = Verified OK, but CA authority is unknown
 	//-14 = Input file has no S/MIME format
 	// All others are failures.
-
+	// Using the lenient interpretation of various errors here
 	switch(iRetval)
 	{
 		case 0:
@@ -148,6 +151,7 @@ static int ReadBIDHeader(char *szFilename, struct IDStruct *pStaID,int *piYr, in
 				//Success!!
 				bIsSignedFile = true;
 				pos = (fpos_t)lFileOffset;
+				iRetval = MapCheckSigResultWRV(iRetval, true); // mapped to 1
 				break;
 			}
 		case 3:
@@ -155,6 +159,7 @@ static int ReadBIDHeader(char *szFilename, struct IDStruct *pStaID,int *piYr, in
 				//Signature CA unknown
 				bIsSignedFile = true;
 				pos = (fpos_t)lFileOffset;
+				iRetval = MapCheckSigResultWRV(iRetval, true); // mapped to 1
 				break;
 				
 			}
@@ -164,6 +169,7 @@ static int ReadBIDHeader(char *szFilename, struct IDStruct *pStaID,int *piYr, in
 				//Treat as normal.
 				bIsSignedFile = false;
 				pos = 0;
+				iRetval = MapCheckSigResultWRV(iRetval, true); // mapped to 1
 				break;
 			}
 		case -1:
@@ -171,6 +177,7 @@ static int ReadBIDHeader(char *szFilename, struct IDStruct *pStaID,int *piYr, in
 				//Library out of memory error, try to continue
 				bIsSignedFile = true;
 				pos = (fpos_t)lFileOffset;
+				iRetval = MapCheckSigResultWRV(iRetval, true); // mapped to 1
 				break;
 			}
 		case 1:
@@ -178,6 +185,7 @@ static int ReadBIDHeader(char *szFilename, struct IDStruct *pStaID,int *piYr, in
 				//Invalid signature, try anyway.
 				bIsSignedFile = true;
 				pos = (fpos_t)lFileOffset;
+				iRetval = MapCheckSigResultWRV(iRetval, true); // mapped to 1
 				break;
 			}
 		case -10:
@@ -328,7 +336,7 @@ static int ReadBI0Header(char *szFilename, struct IDStruct *pStaID,int *piYr, in
 	//3 = Verified OK, but CA authority is unknown
 	//-14 = Input file has no S/MIME format
 	// All others are failures.
-
+	// Using the lenient interpretation of various errors here
 	switch(iRetval)
 	{
 		case 0:
@@ -336,6 +344,7 @@ static int ReadBI0Header(char *szFilename, struct IDStruct *pStaID,int *piYr, in
 				//Success!!
 				bIsSignedFile = true;
 				pos = (fpos_t)lFileOffset;
+				iRetval = MapCheckSigResultWRV(iRetval, true); // mapped to 1
 				break;
 			}
 		case 3:
@@ -343,6 +352,7 @@ static int ReadBI0Header(char *szFilename, struct IDStruct *pStaID,int *piYr, in
 				//Signature CA unknown
 				bIsSignedFile = true;
 				pos = (fpos_t)lFileOffset;
+				iRetval = MapCheckSigResultWRV(iRetval, true); // mapped to 1
 				break;
 				
 			}
@@ -352,6 +362,7 @@ static int ReadBI0Header(char *szFilename, struct IDStruct *pStaID,int *piYr, in
 				//Treat as normal.
 				bIsSignedFile = false;
 				pos = 0;
+				iRetval = MapCheckSigResultWRV(iRetval, true); // mapped to 1
 				break;
 			}
 		case -1:
@@ -359,6 +370,7 @@ static int ReadBI0Header(char *szFilename, struct IDStruct *pStaID,int *piYr, in
 				//Library out of memory error, try to continue
 				bIsSignedFile = true;
 				pos = (fpos_t)lFileOffset;
+				iRetval = MapCheckSigResultWRV(iRetval, true); // mapped to 1
 				break;
 			}
 		case 1:
@@ -366,6 +378,7 @@ static int ReadBI0Header(char *szFilename, struct IDStruct *pStaID,int *piYr, in
 				//Invalid signature, try anyway.
 				bIsSignedFile = true;
 				pos = (fpos_t)lFileOffset;
+				iRetval = MapCheckSigResultWRV(iRetval, true); // mapped to 1
 				break;
 			}
 		case -10:
@@ -1242,7 +1255,7 @@ int ReadHeader(
 
     if (strstr(szTemp, ".bid")) 
 	{
-		status = ReadBIDHeader(szFilename, pStaID, piYr, piMon, piDay, pFileHandle, pdVer, &ulFirstRecordTime);
+		status = ReadBIDHeader(szFilename, pStaID, piYr, piMon, piDay, pFileHandle, pdVer, &ulFirstRecordTime); // does SnF mapped return value
 		pStaID->sStaType = GRAND_TYPE;
 		pStaID->sDataType = FLOAT_TYPE;
 	}
@@ -2421,4 +2434,43 @@ abort:
     return(status);
 }
 
+
+// Return a value mapped from a SnF code to the inconsistent RAD usage contexts.
+// WRV 1 is good, all non-1 values are meh or bad.
+// 'lenient' means proceed (ret 1) in spite of invalid sig, unknown CA or potential memory issues.
+int MapCheckSigResultWRV(int csr, bool lenient)
+{
+	int res = 1; // means true or proceed depending upon the context
+	switch (csr)
+	{
+	case 0:  // alles ist gut with CA, sig and data
+	case -14: // unsigned file
+		break;
+	case 1:
+		if (!lenient)
+			res = uiINVALID_SIGNATURE;
+		break;
+	case 3:
+		if (!lenient)
+			res = uiUNKNOWN_CA;
+		break;
+	case -1:
+		if (!lenient)
+			res = uiMEMORY_ALLOCATION_ERR;
+		break;
+	case -10:
+		res = uiNO_INPUT_FILE;
+		break;
+	case -11:
+		res = uiEMPTY_INPUT_FILE;
+		break;
+	case -12:
+		res = uiIO_ERROR;
+		break;
+	default:
+		res = uiFILE_FAILED_SNF_CHECK_SIGNATURE;
+		break;
+	}
+	return res;
+}
 

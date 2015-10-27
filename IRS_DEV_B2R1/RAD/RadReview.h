@@ -26,7 +26,7 @@
 	#include "RADPROTO.H"
 	
 	// <<QA>> eventually get the version info from resources
-	#define szTOOL_VERSION	"3.2.1.0 for B2R1"		
+	#define szTOOL_VERSION	"3.2.1.1"		
 	#define szCONTACT_NAME		"H. Nordquist"
 	#define szCONTACT_EMAIL		"heather@lanl.gov"
 
