@@ -52,11 +52,11 @@ END
 // Bitmap
 //
 
-IDB_RT_TITLE_BUTTONS    BITMAP  DISCARDABLE     ".\\RT_Title_Buttons.BMP"
-IDB_SEB_PRODUCT_SUPPORT_LANL_HEADER BITMAP  DISCARDABLE     ".\\SEB_Product_Support_Lanl.BMP"
-IDB_SEB_ABOUT_BIRDS     BITMAP  DISCARDABLE     ".\\SEB_About_Birds.bmp"
-IDB_RT_TITLE_NIS5_DARK_1 BITMAP  DISCARDABLE     ".\\RT_Title_NIS5_Dark_1.BMP"
-IDB_SEB_ABOUT_LANL      BITMAP  DISCARDABLE     ".\\SEB_About_Lanl.BMP"
+IDB_RT_TITLE_BUTTONS    BITMAP  DISCARDABLE     ".\\UpperLayer\\RT_Title_Buttons.BMP"
+IDB_SEB_PRODUCT_SUPPORT_LANL_HEADER BITMAP  DISCARDABLE     ".\\UpperLayer\\SEB_Product_Support_Lanl.BMP"
+IDB_SEB_ABOUT_BIRDS     BITMAP  DISCARDABLE     ".\\UpperLayer\\SEB_About_Birds.bmp"
+IDB_RT_TITLE_NIS5_DARK_1 BITMAP  DISCARDABLE     ".\\UpperLayer\\RT_Title_NIS5_Dark_1.BMP"
+IDB_SEB_ABOUT_LANL      BITMAP  DISCARDABLE     ".\\UpperLayer\\SEB_About_Lanl.BMP"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -91,7 +91,7 @@ BEGIN
     LTEXT           "Tool Name Unknown...",IDC_SEB_ABOUT_APP_NAME,40,10,239,
                     8
     LTEXT           "Los Alamos National Laboratory",IDC_STATIC,40,63,147,8
-    LTEXT           "Nuclear Engineering and Nonproliferation",IDC_STATIC,40,72,205,8
+    LTEXT           "Nuclear Nonproliferation",IDC_STATIC,40,72,205,8
     LTEXT           "Safeguards Science and Technology",IDC_STATIC,40,81,198,
                     8
     CTEXT           "",IDC_SEB_ABOUT_MEMORY,57,233,164,8
@@ -233,7 +233,7 @@ BEGIN
     CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,3,179,367,45
     LTEXT           "Safeguards Science and Technology",IDC_STATIC,9,202,309,
                     8
-    LTEXT           "Los Alamos National Laboratory, Nuclear Engineering and Nonproliferation",
+    LTEXT           "Los Alamos National Laboratory, Nonproliferation and International Security",
                     IDC_STATIC,9,192,309,10
     LTEXT           "",IDC_RT_SPLASH_NAME_VERSION,9,183,312,10
     LTEXT           "",IDC_RT_SPLASH_PROGRAMMER_EMAIL,9,212,312,8
@@ -252,8 +252,7 @@ BEGIN
     CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,0,0,268,1
     CONTROL         194,IDC_STATIC,"Static",SS_BITMAP | SS_CENTERIMAGE | 
                     SS_REALSIZEIMAGE,0,2,267,44
-    CTEXT           "Los Alamos National Laboratory, N-1",IDC_SEB_PS_CONTACT,
-                    24,81,219,12
+    CTEXT           "Los Alamos National Laboratory, NEN-1",IDC_SEB_PS_CONTACT,24,81,219,12
     CTEXT           "For support, please contact:",IDC_STATIC,18,69,231,11
 END
 
@@ -408,7 +407,7 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_SEB_QUESTION        ICON    DISCARDABLE     ".\\QUESTION.ICO"
+IDI_SEB_QUESTION        ICON    DISCARDABLE     ".\\UpperLayer\\QUESTION.ICO"
 
 /////////////////////////////////////////////////////////////////////////////
 //

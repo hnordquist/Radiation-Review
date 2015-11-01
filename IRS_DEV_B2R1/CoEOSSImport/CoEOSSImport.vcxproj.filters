@@ -15,25 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\CommonImportCom\AccessDataFile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CommonImportCom\AccessDb.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AccessEOSSDb.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\CommonImportCom\AdoDb.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CoEOSSImport.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CommonImportCom\CreateAccessDatabase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Common\DirUtilities.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EOSSCreateAccessDatabase.cpp">
@@ -48,13 +33,28 @@
     <ClCompile Include="EOSSImport.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Common\ProgressWnd.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Common\SafeArrayUtil.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\misc\CommonImportCom\AccessDataFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\misc\CommonImportCom\AccessDb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\misc\CommonImportCom\AdoDb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\misc\CommonImportCom\CreateAccessDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\misc\Common\DirUtilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\misc\Common\ProgressWnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\misc\Common\SafeArrayUtil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -62,7 +62,7 @@
     <None Include="EOSSImport.rgs">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="..\Common\CommonErrorMessages.ini" />
+    <None Include="..\..\Common\misc\Common\CommonErrorMessages.ini" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="CoEOSSImport.idl">
@@ -70,25 +70,10 @@
     </Midl>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\CommonImportCom\AccessDataFile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CommonImportCom\AccessDb.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AccessEOSSDb.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\CommonImportCom\AdoDb.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CoEOSSImport.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\commondefines.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CommonImportCom\CreateAccessDatabase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EOSSCreateAccessDatabase.h">
@@ -106,16 +91,31 @@
     <ClInclude Include="EOSSImport.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\RAD\imports.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CommonImportCom\ProgressWnd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\misc\CommonImportCom\AccessDataFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\misc\CommonImportCom\AccessDb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\misc\CommonImportCom\AdoDb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\misc\Common\commondefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\misc\CommonImportCom\CreateAccessDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\misc\RAD\imports.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\misc\Common\ProgressWnd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

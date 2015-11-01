@@ -14,6 +14,7 @@
     <ProjectGuid>{AB5EF051-A8EC-4455-A16D-D19929B03634}</ProjectGuid>
     <RootNamespace>CoGrandImport</RootNamespace>
     <Keyword>AtlProj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -21,13 +22,13 @@
     <UseOfMfc>Static</UseOfMfc>
     <UseOfAtl>Static</UseOfAtl>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>Static</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -46,7 +47,7 @@
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">\irs\comlibs\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateManifest>
@@ -59,11 +60,12 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <CustomBuildStep>
-      <Message>Performing registration</Message>
-      <Command>regsvr32 /s /c "$(TargetPath)"
-echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
-</Command>
-      <Outputs>$(OutDir)regsvr32.trg;%(Outputs)</Outputs>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
     </CustomBuildStep>
     <Midl>
       <TypeLibraryName>.\Debug/CoGrandImport.tlb</TypeLibraryName>
@@ -72,7 +74,7 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\CommonBaseClasses;..\Common;..\CommonImportCom;..\..\IRS_DEVCOMMON\winclude32;..\..\IRS_DEVCOMMON\zapp3;..\..\IRS_DEVCOMMON\rdm45\include;..\..\IRS_DEVCOMMON\Zapp3\ZAPPH;..\..\IRS_DEVCOMMON\Check_Signature;G:\Program Files\MSXML 4.0\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\CommonBaseClasses;..\..\Common\misc\Common;..\..\Common\misc\CommonImportCom;..\..\Common\winclude32;..\..\Common\rdm45\include;..\..\Common\Check_Signature;%COMLIBSLOCATION%;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;MINIGRAND;WIN32;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -91,27 +93,27 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>nafxcwd.lib;imagehlp.lib;../../IRS_DEVCOMMON\Winlib32\gui32.lib;../../IRS_DEVCOMMON\Check_Signature\Check_Signature.lib;../../IRS_DEVCOMMON\rdm45\lib\vwin\rdm45w32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>c:/irs/comlibs\CoGrandImport.dll</OutputFile>
+      <AdditionalDependencies>nafxcwd.lib;imagehlp.lib;../../Common\Winlib32\gui32.lib;../../Common\Check_Signature\Check_Signature.lib;../../Common\rdm45\lib\vwin\rdm45w32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\CoGrandImport.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>c:/irs/comlibs/CoGrandImport.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <ImportLibrary>.\Debug/CoGrandImport.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <CustomBuildStep>
-      <Message>Performing registration</Message>
-      <Command>regsvr32 /s /c "$(TargetPath)"
-echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
-</Command>
-      <Outputs>$(OutDir)regsvr32.trg;%(Outputs)</Outputs>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
     </CustomBuildStep>
     <Midl>
       <TypeLibraryName>.\ReleaseMinDependency/CoGrandImport.tlb</TypeLibraryName>
@@ -121,7 +123,7 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\CommonBaseClasses;..\Common;..\CommonImportCom;..\..\IRS_DEVCOMMON\winclude32;..\..\IRS_DEVCOMMON\zapp3;..\..\IRS_DEVCOMMON\rdm45\include;..\..\IRS_DEVCOMMON\Zapp3\ZAPPH;..\..\IRS_DEVCOMMON\Check_Signature;G:\Program Files\MSXML 4.0\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\CommonBaseClasses;..\..\Common\misc\Common;..\..\Common\misc\CommonImportCom;..\..\Common\winclude32;..\..\Common\rdm45\include;..\..\Common\Check_Signature;%COMLIBSLOCATION%;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;_USRDLL;MINIGRAND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -141,8 +143,7 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>nafxcw.lib;imagehlp.lib;../../IRS_DEVCOMMON\Winlib32\gui32.lib;../../IRS_DEVCOMMON\Check_Signature\Check_Signature.lib;../../IRS_DEVCOMMON\rdm45\lib\vwin\rdm45w32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>c:/irs/comlibs/CoGrandImport.dll</OutputFile>
+      <AdditionalDependencies>nafxcw.lib;imagehlp.lib;../../Common\Winlib32\gui32.lib;../../Common\Check_Signature\Check_Signature.lib;../../Common\rdm45\lib\vwin\rdm45w32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\CoGrandImport.def</ModuleDefinitionFile>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -181,7 +182,7 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BrowseInformation>
     </ClCompile>
-    <ClCompile Include="..\Common\DirUtilities.cpp">
+    <ClCompile Include="..\..\Common\misc\Common\DirUtilities.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -192,7 +193,7 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BrowseInformation>
     </ClCompile>
-    <ClCompile Include="..\Common\ErrorProcessing.cpp">
+    <ClCompile Include="..\..\Common\misc\Common\ErrorProcessing.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -203,7 +204,7 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BrowseInformation>
     </ClCompile>
-    <ClCompile Include="..\Common\GenDateTime.cpp">
+    <ClCompile Include="..\..\Common\misc\Common\GenDateTime.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -280,7 +281,7 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BrowseInformation>
     </ClCompile>
-    <ClCompile Include="..\Common\MyDateTime.cpp">
+    <ClCompile Include="..\..\Common\misc\Common\MyDateTime.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -291,7 +292,7 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BrowseInformation>
     </ClCompile>
-    <ClCompile Include="..\Common\ProgressWnd.cpp">
+    <ClCompile Include="..\..\Common\misc\Common\ProgressWnd.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -302,7 +303,7 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BrowseInformation>
     </ClCompile>
-    <ClCompile Include="..\Common\SafeArrayUtil.cpp">
+    <ClCompile Include="..\..\Common\misc\Common\SafeArrayUtil.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -328,7 +329,7 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BrowseInformation>
     </ClCompile>
-    <ClCompile Include="..\CommonImportCom\VistaBaseData.cpp">
+    <ClCompile Include="..\..\Common\misc\CommonImportCom\VistaBaseData.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -339,7 +340,7 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BrowseInformation>
     </ClCompile>
-    <ClCompile Include="..\CommonImportCom\VistaDataFile.cpp">
+    <ClCompile Include="..\..\Common\misc\CommonImportCom\VistaDataFile.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -350,7 +351,7 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BrowseInformation>
     </ClCompile>
-    <ClCompile Include="..\CommonImportCom\VistaDb.cpp">
+    <ClCompile Include="..\..\Common\misc\CommonImportCom\VistaDb.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -384,23 +385,23 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
   <ItemGroup>
     <ClInclude Include="..\CommonBaseClasses\BaseFacCfgWrap.h" />
     <ClInclude Include="CoGrandImport.h" />
-    <ClInclude Include="..\CommonImportCom\db_rmon.h" />
-    <ClInclude Include="..\Common\DirUtilities.h" />
-    <ClInclude Include="..\Common\ErrorProcessing.h" />
-    <ClInclude Include="..\Common\GenDateTime.h" />
+    <ClInclude Include="..\..\Common\misc\CommonImportCom\db_rmon.h" />
+    <ClInclude Include="..\..\Common\misc\Common\DirUtilities.h" />
+    <ClInclude Include="..\..\Common\misc\Common\ErrorProcessing.h" />
+    <ClInclude Include="..\..\Common\misc\Common\GenDateTime.h" />
     <ClInclude Include="GrandData.h" />
     <ClInclude Include="GrandDataFile.h" />
     <ClInclude Include="GrandDbVista.h" />
     <ClInclude Include="GrandFacCfgWrap.h" />
     <ClInclude Include="GrandImport.h" />
     <ClInclude Include="GrandImportSupport.h" />
-    <ClInclude Include="..\Common\imports.h" />
-    <ClInclude Include="..\Common\MyDateTime.h" />
+    <ClInclude Include="..\..\Common\misc\Common\imports.h" />
+    <ClInclude Include="..\..\Common\misc\Common\MyDateTime.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="StdAfx.h" />
-    <ClInclude Include="..\CommonImportCom\VistaBaseData.h" />
-    <ClInclude Include="..\CommonImportCom\VistaDataFile.h" />
-    <ClInclude Include="..\CommonImportCom\VistaDb.h" />
+    <ClInclude Include="..\..\Common\misc\CommonImportCom\VistaBaseData.h" />
+    <ClInclude Include="..\..\Common\misc\CommonImportCom\VistaDataFile.h" />
+    <ClInclude Include="..\..\Common\misc\CommonImportCom\VistaDb.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CoGrandImport.rc">

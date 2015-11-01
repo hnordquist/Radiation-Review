@@ -8,27 +8,7 @@ CFG=CoVifmImport - Win32 Debug
 !MESSAGE This is not a valid makefile. To build this project using NMAKE,
 !MESSAGE use the Export Makefile command and run
 !MESSAGE 
-!MESSAGE NMAKE /f "CoVifmImport.mak".
-!MESSAGE 
-!MESSAGE You can specify a configuration when running NMAKE
-!MESSAGE by defining the macro CFG on the command line. For example:
-!MESSAGE 
-!MESSAGE NMAKE /f "CoVifmImport.mak" CFG="CoVifmImport - Win32 Debug"
-!MESSAGE 
-!MESSAGE Possible choices for configuration are:
-!MESSAGE 
-!MESSAGE "CoVifmImport - Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
-!MESSAGE "CoVifmImport - Win32 Release MinDependency" (based on "Win32 (x86) Dynamic-Link Library")
-!MESSAGE 
-
-# Begin Project
-# PROP AllowPerConfigDependencies 0
-# PROP Scc_ProjName ""$/Radiation Review/CoVifmImport", PUDAAAAA"
-# PROP Scc_LocalPath "."
-CPP=cl.exe
-MTL=midl.exe
-RSC=rc.exe
-
+!MESSAGE NMAKE /f "CoVifmImport.mak".C
 !IF  "$(CFG)" == "CoVifmImport - Win32 Debug"
 
 # PROP BASE Use_MFC 2
@@ -43,7 +23,7 @@ RSC=rc.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /Yu"stdafx.h" /FD /GZ /c
-# ADD CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\CommonImportCom" /I "..\Common" /I "..\..\IRS_DEVCOMMON\Winclude32" /I "..\..\IRS_DEVCOMMON\rdm45\include" /I "..\..\IRS_DEVCOMMON\Check_Signature" /D "_DEBUG" /D "_MBCS" /D "VIFM" /D "WIN32" /D "_WINDOWS" /D "_USRDLL" /D "_WINDLL" /FR /Yu"stdafx.h" /FD /GZ /c
+# ADD CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\..\Common\misc\CommonImportCom" /I "..\..\Common\misc\Common" /I "..\..\Common\Winclude32" /I "..\..\Common\rdm45\include" /I "..\..\Common\Check_Signature" /D "_DEBUG" /D "_MBCS" /D "VIFM" /D "WIN32" /D "_WINDOWS" /D "_USRDLL" /D "_WINDLL" /FR /Yu"stdafx.h" /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x409 /d "_DEBUG" /d "_AFXDLL"
 # ADD RSC /l 0x409 /d "_DEBUG"
@@ -52,7 +32,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 /nologo /subsystem:windows /dll /debug /machine:I386 /pdbtype:sept
-# ADD LINK32 ..\..\IRS_DEVCOMMON\rdm45\lib\vwin\rdm45w32.lib imagehlp.lib ..\..\IRS_DEVCOMMON\Check_Signature\Check_Signature.lib /nologo /subsystem:windows /dll /debug /machine:I386 /def:".\CoVifmImport.def" /out:"c:/irs/comlibs\CoVifmImport.dll" /pdbtype:sept /libpath:"..\..\IRS_DEVCOMMON\rdm45\lib"
+# ADD LINK32 ..\..\Common\rdm45\lib\vwin\rdm45w32.lib imagehlp.lib ..\..\Common\Check_Signature\Check_Signature.lib /nologo /subsystem:windows /dll /debug /machine:I386 /def:".\CoVifmImport.def" /out:"c:/irs/comlibs\CoVifmImport.dll" /pdbtype:sept /libpath:"..\..\Common\rdm45\lib"
 # SUBTRACT LINK32 /pdb:none
 # Begin Custom Build - Performing registration
 OutDir=.\Debug
@@ -80,7 +60,7 @@ SOURCE="$(InputPath)"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MD /W3 /GX /O1 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /Yu"stdafx.h" /FD /c
-# ADD CPP /nologo /MT /W3 /GX /Zi /O2 /I "..\CommonImportCom" /I "..\Common" /I "..\..\IRS_DEVCOMMON\Winclude32" /I "..\..\IRS_DEVCOMMON\rdm45\include" /I "..\..\IRS_DEVCOMMON\Check_Signature" /D "NDEBUG" /D "_MBCS" /D "_ATL_STATIC_REGISTRY" /D "VIFM" /D "WIN32" /D "_WINDOWS" /D "_USRDLL" /D "_WINDLL" /FR /Yu"stdafx.h" /FD /c
+# ADD CPP /nologo /MT /W3 /GX /Zi /O2 /I "..\..\Common\misc\CommonImportCom" /I "..\..\Common\misc\Common" /I "..\..\Common\Winclude32" /I "..\..\Common\rdm45\include" /I "..\..\Common\Check_Signature" /D "NDEBUG" /D "_MBCS" /D "_ATL_STATIC_REGISTRY" /D "VIFM" /D "WIN32" /D "_WINDOWS" /D "_USRDLL" /D "_WINDLL" /FR /Yu"stdafx.h" /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x409 /d "NDEBUG" /d "_AFXDLL"
 # ADD RSC /l 0x409 /d "NDEBUG"
@@ -89,7 +69,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 /nologo /subsystem:windows /dll /machine:I386
-# ADD LINK32 ..\..\IRS_DEVCOMMON\rdm45\lib\vwin\rdm45w32.lib imagehlp.lib ..\..\IRS_DEVCOMMON\Check_Signature\Check_Signature.lib /nologo /subsystem:windows /dll /incremental:yes /map /debug /machine:I386 /out:"c:/irs/comlibs/CoVifmImport.dll" /libpath:"..\..\IRS_DEVCOMMON\rdm45\lib"
+# ADD LINK32 ..\..\Common\rdm45\lib\vwin\rdm45w32.lib imagehlp.lib ..\..\Common\Check_Signature\Check_Signature.lib /nologo /subsystem:windows /dll /incremental:yes /map /debug /machine:I386 /out:"c:/irs/comlibs/CoVifmImport.dll" /libpath:"..\..\Common\rdm45\lib"
 # Begin Custom Build - Performing registration
 OutDir=.\ReleaseMinDependency
 TargetPath=\irs\comlibs\CoVifmImport.dll
@@ -139,7 +119,7 @@ SOURCE=.\CoVifmImport.rc
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\DirUtilities.cpp
+SOURCE=..\..\Common\misc\Common\DirUtilities.cpp
 # End Source File
 # Begin Source File
 
@@ -147,19 +127,19 @@ SOURCE=.\FacCfgWrap.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\GenDateTime.cpp
+SOURCE=..\..\Common\misc\Common\GenDateTime.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\MyDateTime.cpp
+SOURCE=..\..\Common\misc\Common\MyDateTime.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\ProgressWnd.cpp
+SOURCE=..\..\Common\misc\Common\ProgressWnd.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\SafeArrayUtil.cpp
+SOURCE=..\..\Common\misc\Common\SafeArrayUtil.cpp
 # End Source File
 # Begin Source File
 
@@ -188,15 +168,15 @@ SOURCE=.\VifmImportSupport.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\CommonImportCom\VistaBaseData.cpp
+SOURCE=..\..\Common\misc\CommonImportCom\VistaBaseData.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\CommonImportCom\VistaDataFile.cpp
+SOURCE=..\..\Common\misc\CommonImportCom\VistaDataFile.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\CommonImportCom\VistaDb.cpp
+SOURCE=..\..\Common\misc\CommonImportCom\VistaDb.cpp
 # End Source File
 # End Group
 # Begin Group "Header Files"
@@ -208,19 +188,19 @@ SOURCE=.\FacCfgWrap.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\IRS_DEVCOMMON\Winclude32\GEN.H
+SOURCE=..\..\Common\Winclude32\GEN.H
 # End Source File
 # Begin Source File
 
-SOURCE=..\CommonImportCom\GenDateTime.h
+SOURCE=..\..\Common\misc\CommonImportCom\GenDateTime.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\CommonImportCom\MyDateTime.h
+SOURCE=..\..\Common\misc\CommonImportCom\MyDateTime.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\CommonImportCom\ProgressWnd.h
+SOURCE=..\..\Common\misc\CommonImportCom\ProgressWnd.h
 # End Source File
 # Begin Source File
 
@@ -252,15 +232,15 @@ SOURCE=.\VifmImportSupport.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\CommonImportCom\VistaBaseData.h
+SOURCE=..\..\Common\misc\CommonImportCom\VistaBaseData.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\CommonImportCom\VistaDataFile.h
+SOURCE=..\..\Common\misc\CommonImportCom\VistaDataFile.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\CommonImportCom\VistaDb.h
+SOURCE=..\..\Common\misc\CommonImportCom\VistaDb.h
 # End Source File
 # End Group
 # Begin Group "Resource Files"

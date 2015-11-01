@@ -1876,8 +1876,8 @@ END
 
 #include "afxres.rc"  	// Standard components
 #include "afxprint.rc"	// printing/print preview resources
-#include "..\..\IRS_DEVCOMMON\UPPERLAYER\resource.h"
-#include "..\..\IRS_DEVCOMMON\UPPERLAYER\sebboxes.rc"
+#include ".\UPPERLAYER\resource.h"
+#include ".\UPPERLAYER\sebboxes.rc"
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
 
