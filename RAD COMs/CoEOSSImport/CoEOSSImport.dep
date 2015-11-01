@@ -1,0 +1,201 @@
+# Microsoft Developer Studio Generated Dependency File, included by CoEOSSImport.mak
+
+..\CommonImportCom\AccessDataFile.cpp : \
+	"..\..\..\program files\common files\system\ado\msado15.dll"\
+	"..\..\..\program files\common files\system\ado\msadox.dll"\
+	"..\..\..\program files\common files\system\ado\msjro.dll"\
+	"..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\Common\DirUtilities.h"\
+	"..\Common\HPDefines.h"\
+	"..\CommonImportCom\AccessBaseData.h"\
+	"..\CommonImportCom\AccessDataFile.h"\
+	"..\CommonImportCom\AccessDb.h"\
+	"..\CommonImportCom\AdoDb.h"\
+	"..\commonimportcom\stdafx.h"\
+	
+
+..\CommonImportCom\AccessDb.cpp : \
+	"..\..\..\program files\common files\system\ado\msado15.dll"\
+	"..\..\..\program files\common files\system\ado\msadox.dll"\
+	"..\..\..\program files\common files\system\ado\msjro.dll"\
+	"..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\Common\DirUtilities.h"\
+	"..\Common\HPDefines.h"\
+	"..\CommonImportCom\AccessDb.h"\
+	"..\CommonImportCom\AdoDb.h"\
+	"..\commonimportcom\stdafx.h"\
+	
+
+.\AccessEOSSDb.cpp : \
+	"..\..\..\program files\common files\system\ado\msado15.dll"\
+	"..\..\..\program files\common files\system\ado\msadox.dll"\
+	"..\..\..\program files\common files\system\ado\msjro.dll"\
+	"..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\Common\commondefines.h"\
+	"..\Common\DirUtilities.h"\
+	"..\Common\HPDefines.h"\
+	"..\CommonImportCom\AccessDb.h"\
+	"..\CommonImportCom\AdoDb.h"\
+	".\AccessEOSSDb.h"\
+	".\StdAfx.h"\
+	
+
+..\CommonImportCom\AdoDb.cpp : \
+	"..\..\..\program files\common files\system\ado\msado15.dll"\
+	"..\..\..\program files\common files\system\ado\msadox.dll"\
+	"..\..\..\program files\common files\system\ado\msjro.dll"\
+	"..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\Common\HPDefines.h"\
+	"..\CommonImportCom\AdoDb.h"\
+	"..\commonimportcom\stdafx.h"\
+	
+
+.\CoEOSSImport.cpp : \
+	"..\..\..\irs\comlibs\cofacilitymgr.exe"\
+	"..\..\..\irs\comlibs\coirslogger.dll"\
+	"..\..\..\program files\common files\system\ado\msado15.dll"\
+	"..\..\..\program files\common files\system\ado\msadox.dll"\
+	"..\..\..\program files\common files\system\ado\msjro.dll"\
+	"..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\Common\DirUtilities.h"\
+	"..\Common\HPDefines.h"\
+	"..\Common\imports.h"\
+	"..\CommonImportCom\AccessDb.h"\
+	"..\CommonImportCom\AdoDb.h"\
+	".\AccessEOSSDb.h"\
+	".\CoEOSSImport.h"\
+	".\CoEOSSImport_i.c"\
+	".\EOSSImport.h"\
+	".\StdAfx.h"\
+	
+
+..\CommonImportCom\CreateAccessDatabase.cpp : \
+	"..\..\..\program files\common files\system\ado\msado15.dll"\
+	"..\..\..\program files\common files\system\ado\msadox.dll"\
+	"..\..\..\program files\common files\system\ado\msjro.dll"\
+	"..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\Common\commondefines.h"\
+	"..\Common\HPDefines.h"\
+	"..\CommonImportCom\CreateAccessDatabase.h"\
+	"..\commonimportcom\stdafx.h"\
+	
+
+..\Common\DirUtilities.cpp : \
+	"..\..\..\program files\common files\system\ado\msado15.dll"\
+	"..\..\..\program files\common files\system\ado\msadox.dll"\
+	"..\..\..\program files\common files\system\ado\msjro.dll"\
+	"..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\Common\DirUtilities.h"\
+	"..\Common\HPDefines.h"\
+	"..\Common\ProgressWnd.h"\
+	"..\commonimportcom\stdafx.h"\
+	
+
+.\EOSSCreateAccessDatabase.cpp : \
+	"..\..\..\program files\common files\system\ado\msado15.dll"\
+	"..\..\..\program files\common files\system\ado\msadox.dll"\
+	"..\..\..\program files\common files\system\ado\msjro.dll"\
+	"..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\Common\HPDefines.h"\
+	"..\CommonImportCom\CreateAccessDatabase.h"\
+	"..\commonimportcom\stdafx.h"\
+	".\EOSSCreateAccessDatabase.h"\
+	".\StdAfx.h"\
+	
+
+.\EOSSData.cpp : \
+	"..\..\..\program files\common files\system\ado\msado15.dll"\
+	"..\..\..\program files\common files\system\ado\msadox.dll"\
+	"..\..\..\program files\common files\system\ado\msjro.dll"\
+	"..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\Common\DirUtilities.h"\
+	"..\Common\HPDefines.h"\
+	"..\Common\SafeArrayUtil.h"\
+	"..\CommonImportCom\AccessBaseData.h"\
+	"..\CommonImportCom\AccessDb.h"\
+	"..\CommonImportCom\AdoDb.h"\
+	".\EOSSData.h"\
+	".\StdAfx.h"\
+	
+
+.\EOSSDataFile.cpp : \
+	"..\..\..\irs\comlibs\cofacilitymgr.exe"\
+	"..\..\..\irs\comlibs\coirslogger.dll"\
+	"..\..\..\program files\common files\system\ado\msado15.dll"\
+	"..\..\..\program files\common files\system\ado\msadox.dll"\
+	"..\..\..\program files\common files\system\ado\msjro.dll"\
+	"..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\Common\DirUtilities.h"\
+	"..\Common\HPDefines.h"\
+	"..\Common\imports.h"\
+	"..\CommonImportCom\AccessBaseData.h"\
+	"..\CommonImportCom\AccessDataFile.h"\
+	"..\CommonImportCom\AccessDb.h"\
+	"..\CommonImportCom\AdoDb.h"\
+	".\EOSSData.h"\
+	".\EOSSDataFile.h"\
+	".\eossdefs.h"\
+	".\StdAfx.h"\
+	
+
+.\EOSSImport.cpp : \
+	"..\..\..\irs\comlibs\cofacilitymgr.exe"\
+	"..\..\..\irs\comlibs\coirslogger.dll"\
+	"..\..\..\program files\common files\system\ado\msado15.dll"\
+	"..\..\..\program files\common files\system\ado\msadox.dll"\
+	"..\..\..\program files\common files\system\ado\msjro.dll"\
+	"..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\Common\commondefines.h"\
+	"..\Common\DirUtilities.h"\
+	"..\Common\HPDefines.h"\
+	"..\Common\imports.h"\
+	"..\Common\SafeArrayUtil.h"\
+	"..\CommonImportCom\AccessBaseData.h"\
+	"..\CommonImportCom\AccessDataFile.h"\
+	"..\CommonImportCom\AccessDb.h"\
+	"..\CommonImportCom\AdoDb.h"\
+	"..\CommonImportCom\CreateAccessDatabase.h"\
+	"..\commonimportcom\stdafx.h"\
+	".\AccessEOSSDb.h"\
+	".\CoEOSSImport.h"\
+	".\EOSSCreateAccessDatabase.h"\
+	".\EOSSData.h"\
+	".\EOSSDataFile.h"\
+	".\eossdefs.h"\
+	".\EOSSImport.h"\
+	".\StdAfx.h"\
+	
+
+..\Common\ProgressWnd.cpp : \
+	"..\..\..\program files\common files\system\ado\msado15.dll"\
+	"..\..\..\program files\common files\system\ado\msadox.dll"\
+	"..\..\..\program files\common files\system\ado\msjro.dll"\
+	"..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\Common\HPDefines.h"\
+	"..\Common\ProgressWnd.h"\
+	"..\commonimportcom\stdafx.h"\
+	
+
+..\Common\SafeArrayUtil.cpp : \
+	"..\..\..\program files\common files\system\ado\msado15.dll"\
+	"..\..\..\program files\common files\system\ado\msadox.dll"\
+	"..\..\..\program files\common files\system\ado\msjro.dll"\
+	"..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\Common\HPDefines.h"\
+	"..\Common\SafeArrayUtil.h"\
+	"..\commonimportcom\stdafx.h"\
+	
+
+.\StdAfx.cpp : \
+	"..\..\..\program files\common files\system\ado\msado15.dll"\
+	"..\..\..\program files\common files\system\ado\msadox.dll"\
+	"..\..\..\program files\common files\system\ado\msjro.dll"\
+	"..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\Common\HPDefines.h"\
+	".\StdAfx.h"\
+	
+
+.\CoEOSSImport.rc : \
+	".\CoEOSSImport.tlb"\
+	".\EOSSImport.rgs"\
+	

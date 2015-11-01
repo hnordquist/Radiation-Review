@@ -1,0 +1,74 @@
+
+                                                                    Page  1
+Raima Database Manager Version 4.5, Summary of Database: db_vifm
+Wed Jul 27 12:14:44 2005
+
+FILE: db_vday.dbf
+   Id  : 0
+   Type: data
+   Size of record slots : 88
+   Record slots per page: 11
+   Unused page space    : 52
+
+FILE: db_vdata.dbf
+   Id  : 1
+   Type: data
+   Size of record slots : 12198
+   Record slots per page: 1
+   Unused page space    : 26
+
+FILE: db_vday.key
+   Id  : 2
+   Type: key
+   Size of record slots : 18
+   Record slots per page: 227
+   Unused page space    : 0
+
+FILE: db_vdata.key
+   Id  : 3
+   Type: key
+   Size of record slots : 18
+   Record slots per page: 227
+   Unused page space    : 0
+
+RECORD: db_sta_rec
+   Id  : 0
+   File: db_vday.dbf [0]
+   Total set pointers   : 1
+   Total member pointers: 1
+   Offset to data       : 30
+   Size of record       : 88
+   Unused slot space    : 0
+
+RECORD: db_day_rec
+   Id  : 1
+   File: db_vday.dbf [0]
+   Total set pointers   : 1
+   Total member pointers: 1
+   Offset to data       : 30
+   Size of record       : 58
+   Unused slot space    : 30
+
+RECORD: db_float_data_rec
+   Id  : 2
+   File: db_vdata.dbf [1]
+   Total set pointers   : 0
+   Total member pointers: 1
+   Offset to data       : 18
+   Size of record       : 12198
+   Unused slot space    : 0
+
+
+                                                                    Page  2
+Raima Database Manager Version 4.5, Summary of Database: db_vifm
+Wed Jul 27 12:14:44 2005
+
+RECORD: system
+   Id  : 3
+   File: db_vday.dbf [0]
+   Total set pointers   : 1
+   Total member pointers: 0
+   Offset to data       : 18
+   Size of record       : 18
+   Unused slot space    : 70
+

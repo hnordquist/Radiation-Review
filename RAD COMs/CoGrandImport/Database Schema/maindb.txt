@@ -1,0 +1,74 @@
+
+                                                                    Page  1
+Raima Database Manager Version 4.5, Summary of Database: db_rmon
+Mon Dec 06 11:20:10 2004
+
+FILE: db_day.dbf
+   Id  : 0
+   Type: data
+   Size of record slots : 88
+   Record slots per page: 11
+   Unused page space    : 52
+
+FILE: db_data.dbf
+   Id  : 1
+   Type: data
+   Size of record slots : 4086
+   Record slots per page: 1
+   Unused page space    : 6
+
+FILE: db_day.key
+   Id  : 2
+   Type: key
+   Size of record slots : 18
+   Record slots per page: 227
+   Unused page space    : 0
+
+FILE: db_data.key
+   Id  : 3
+   Type: key
+   Size of record slots : 18
+   Record slots per page: 227
+   Unused page space    : 0
+
+RECORD: db_sta_rec
+   Id  : 0
+   File: db_day.dbf [0]
+   Total set pointers   : 1
+   Total member pointers: 1
+   Offset to data       : 30
+   Size of record       : 88
+   Unused slot space    : 0
+
+RECORD: db_day_rec
+   Id  : 1
+   File: db_day.dbf [0]
+   Total set pointers   : 1
+   Total member pointers: 1
+   Offset to data       : 30
+   Size of record       : 58
+   Unused slot space    : 30
+
+RECORD: db_float_data_rec
+   Id  : 2
+   File: db_data.dbf [1]
+   Total set pointers   : 0
+   Total member pointers: 1
+   Offset to data       : 18
+   Size of record       : 4086
+   Unused slot space    : 0
+
+
+                                                                    Page  2
+Raima Database Manager Version 4.5, Summary of Database: db_rmon
+Mon Dec 06 11:20:10 2004
+
+RECORD: system
+   Id  : 3
+   File: db_day.dbf [0]
+   Total set pointers   : 1
+   Total member pointers: 0
+   Offset to data       : 18
+   Size of record       : 18
+   Unused slot space    : 70
+

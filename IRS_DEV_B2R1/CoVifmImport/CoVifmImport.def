@@ -1,9 +1,0 @@
-; CoVifmImport.def : Declares the module parameters.
-
-LIBRARY      "CoVifmImport.DLL"
-
-EXPORTS
-	DllCanUnloadNow      PRIVATE
-	DllGetClassObject    PRIVATE
-	DllRegisterServer    PRIVATE
-	DllUnregisterServer	 PRIVATE

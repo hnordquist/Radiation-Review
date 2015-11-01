@@ -1,9 +1,0 @@
-; CoLinearTimeAlign.def : Declares the module parameters.
-
-LIBRARY      "CoLinearTimeAlign.DLL"
-
-EXPORTS
-	DllCanUnloadNow      PRIVATE
-	DllGetClassObject    PRIVATE
-	DllRegisterServer    PRIVATE
-	DllUnregisterServer	 PRIVATE
