@@ -43,11 +43,11 @@ RSC=rc.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /YX /FD /c
-# ADD CPP /nologo /MT /W3 /GX /Zi /O2 /I "..\..\Rad_Coms" /I "..\Common" /I "..\CommonImportCom" /I "..\..\Common\winclude32" /I "..\..\Common\zapp3" /I "..\..\Common\rdm45\include" /I "..\..\Common\Zapp3\ZAPPH" /I "..\..\Common\Check_Signature" /I "\Program Files\Common Files\System\ado" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "Z_NP" /D "RW_NO_STL" /Fr /FD /c
+# ADD CPP /nologo /MT /W3 /GX /Zi /O2 /I "..\..\Common\misc\Integrated Review COMs" /I "..\..\Common\misc\Common" /I "..\..\Common\misc\CommonImportCom" /I "..\..\Common\winclude32" /I "..\..\Common\zapp3" /I "..\..\Common\rdm45\include" /I "..\..\Common\Zapp3\ZAPPH" /I "..\..\Common\Check_Signature" /I "\Program Files\Common Files\System\ado" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "Z_NP" /D "RW_NO_STL" /Fr /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
 # ADD BASE RSC /l 0x409 /d "NDEBUG"
-# ADD RSC /l 0x409 /i "..\..\IRS_DEVCOMMON\UpperLayer" /d "NDEBUG"
+# ADD RSC /l 0x409 /i ".\UpperLayer" /d "NDEBUG"
 BSC32=bscmake.exe
 # ADD BASE BSC32 /nologo
 # ADD BSC32 /nologo
@@ -70,12 +70,12 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GX /Zi /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /YX /FD /c
-# ADD CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\..\rad_coms" /I "..\Common" /I "..\CommonImportCom" /I "..\..\Common\winclude32" /I "..\..\Common\zapp3" /I "..\..\Common\rdm45\include" /I "..\..\Common\Zapp3\ZAPPH" /I "..\..\Common\Check_Signature" /I "\Program Files\Common Files\System\ado" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "Z_NP" /D "RW_NO_STL" /D "MSC" /FR /FD /c
+# ADD CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\..\Common\misc\Integrated Review COMs" /I "..\..\Common\misc\Common" /I "..\..\Common\misc\CommonImportCom" /I "..\..\Common\winclude32" /I "..\..\Common\zapp3" /I "..\..\Common\rdm45\include" /I "..\..\Common\Zapp3\ZAPPH" /I "..\..\Common\Check_Signature" /I "\Program Files\Common Files\System\ado" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "Z_NP" /D "RW_NO_STL" /D "MSC" /FR /FD /c
 # SUBTRACT CPP /X
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
 # ADD BASE RSC /l 0x409 /d "_DEBUG"
-# ADD RSC /l 0x409 /i "..\..\IRS_DEVCOMMON\UpperLayer" /d "_DEBUG"
+# ADD RSC /l 0x409 /i ".\UpperLayer" /d "_DEBUG"
 BSC32=bscmake.exe
 # ADD BASE BSC32 /nologo
 # ADD BSC32 /nologo
@@ -167,7 +167,7 @@ SOURCE=.\DbTime.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\DirUtilities.cpp
+SOURCE=..\..\Common\misc\Common\DirUtilities.cpp
 # End Source File
 # Begin Source File
 
@@ -287,7 +287,7 @@ SOURCE=.\FindMeas.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\GenDateTime.cpp
+SOURCE=..\..\Common\misc\Common\GenDateTime.cpp
 # End Source File
 # Begin Source File
 
@@ -323,7 +323,7 @@ SOURCE=.\MainDbCfg.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\MyDateTime.cpp
+SOURCE=..\..\Common\misc\Common\MyDateTime.cpp
 # End Source File
 # Begin Source File
 
@@ -375,7 +375,7 @@ SOURCE=.\ProgressBars.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\ProgressWnd.cpp
+SOURCE=..\..\Common\misc\Common\ProgressWnd.cpp
 # End Source File
 # Begin Source File
 
@@ -459,7 +459,7 @@ SOURCE=".\UPPERLAYER\RTTITLE.CPP"
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\SafeArrayUtil.cpp
+SOURCE=..\..\Common\misc\Common\SafeArrayUtil.cpp
 # End Source File
 # Begin Source File
 
@@ -519,7 +519,7 @@ SOURCE=.\BinaryImport.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\ComDataStructures.h
+SOURCE=..\..\Common\misc\Common\ComDataStructures.h
 # End Source File
 # Begin Source File
 
@@ -563,7 +563,7 @@ SOURCE=.\FacilityConfig.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\GenDateTime.h
+SOURCE=..\..\Common\misc\Common\GenDateTime.h
 # End Source File
 # Begin Source File
 
@@ -579,7 +579,7 @@ SOURCE=.\GUI_PLOT.H
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\HPDefines.h
+SOURCE=..\..\Common\misc\Common\HPDefines.h
 # End Source File
 # Begin Source File
 
@@ -587,7 +587,7 @@ SOURCE=.\imports.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\MyDateTime.h
+SOURCE=..\..\Common\misc\Common\MyDateTime.h
 # End Source File
 # Begin Source File
 
@@ -611,7 +611,7 @@ SOURCE=.\ProgressBars.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\ProgressWnd.h
+SOURCE=..\..\Common\misc\Common\ProgressWnd.h
 # End Source File
 # Begin Source File
 
@@ -699,7 +699,7 @@ SOURCE=.\UPPERLAYER\RTTITLE.H
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\SafeArrayUtil.h
+SOURCE=..\..\Common\misc\Common\SafeArrayUtil.h
 # End Source File
 # Begin Source File
 
@@ -711,7 +711,7 @@ SOURCE=.\StdAfx.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\targetver.h
+SOURCE=..\..\Common\misc\Common\targetver.h
 # End Source File
 # Begin Source File
 
@@ -727,7 +727,7 @@ SOURCE=.\UPPERLAYER\TxtWrdb.H
 # End Source File
 # Begin Source File
 
-SOURCE=..\Common\TypeDefinitions.h
+SOURCE=..\..\Common\misc\Common\TypeDefinitions.h
 # End Source File
 # Begin Source File
 

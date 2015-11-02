@@ -33,21 +33,10 @@ INTDIR=.\Release
 OutDir=.\Release
 # End Custom Macros
 
-!IF "$(RECURSE)" == "0" 
+ALL : "$(OUTDIR)\RAD.exe" "$(OUTDIR)\RAD.bsc"
 
-ALL : "..\..\..\irs\rad\RAD.exe" "$(OUTDIR)\RAD.bsc"
 
-!ELSE 
-
-ALL : "..\..\..\irs\rad\RAD.exe" "$(OUTDIR)\RAD.bsc"
-
-!ENDIF 
-
-!IF "$(RECURSE)" == "1" 
 CLEAN :
-!ELSE 
-CLEAN :
-!ENDIF 
 	-@erase "$(INTDIR)\AdjustTime.obj"
 	-@erase "$(INTDIR)\AdjustTime.sbr"
 	-@erase "$(INTDIR)\BinaryImport.obj"
@@ -258,15 +247,13 @@ CLEAN :
 	-@erase "$(INTDIR)\WriteXML.obj"
 	-@erase "$(INTDIR)\WriteXML.sbr"
 	-@erase "$(OUTDIR)\RAD.bsc"
-	-@erase "$(OUTDIR)\RAD.pdb"
-	-@erase "..\..\..\irs\rad\RAD.exe"
-	-@erase "..\..\..\irs\rad\RAD.ilk"
+	-@erase "$(OUTDIR)\RAD.exe"
 
 "$(OUTDIR)" :
     if not exist "$(OUTDIR)/$(NULL)" mkdir "$(OUTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /MT /W3 /GX /Zi /O2 /I "..\Common" /I "..\CommonImportCom" /I "..\..\IRS_DEVCOMMON\winclude32" /I "..\..\IRS_DEVCOMMON\zapp3" /I "..\..\IRS_DEVCOMMON\rdm45\include" /I "..\..\IRS_DEVCOMMON\Zapp3\ZAPPH" /I "..\..\IRS_DEVCOMMON\Check_Signature" /I "c:\Program Files\MSXML 6.0\inc" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "Z_NP" /D "RW_NO_STL" /FR"$(INTDIR)\\" /Fo"$(INTDIR)\\" /Fd"$(INTDIR)\\" /FD /c 
+CPP_PROJ=/nologo /MT /W3 /GX /Zi /O2 /I "..\..\Common\misc\Integrated Review COMs" /I "..\..\Common\misc\Common" /I "..\..\Common\misc\CommonImportCom" /I "..\..\Common\winclude32" /I "..\..\Common\zapp3" /I "..\..\Common\rdm45\include" /I "..\..\Common\Zapp3\ZAPPH" /I "..\..\Common\Check_Signature" /I "\Program Files\Common Files\System\ado" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "Z_NP" /D "RW_NO_STL" /Fr"$(INTDIR)\\" /Fo"$(INTDIR)\\" /Fd"$(INTDIR)\\" /FD /c 
 
 .c{$(INTDIR)}.obj::
    $(CPP) @<<
@@ -301,7 +288,7 @@ CPP_PROJ=/nologo /MT /W3 /GX /Zi /O2 /I "..\Common" /I "..\CommonImportCom" /I "
 MTL=midl.exe
 MTL_PROJ=/nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32 
 RSC=rc.exe
-RSC_PROJ=/l 0x409 /fo"$(INTDIR)\RAD.res" /i "..\..\IRS_DEVCOMMON\UpperLayer" /d "NDEBUG" 
+RSC_PROJ=/l 0x409 /fo"$(INTDIR)\RAD.res" /i ".\UpperLayer" /d "NDEBUG" 
 BSC32=bscmake.exe
 BSC32_FLAGS=/nologo /o"$(OUTDIR)\RAD.bsc" 
 BSC32_SBRS= \
@@ -415,7 +402,7 @@ BSC32_SBRS= \
 <<
 
 LINK32=link.exe
-LINK32_FLAGS=..\..\IRS_DEVCOMMON\Winlib32\plot.lib nafxcw.lib imagehlp.lib ..\..\IRS_DEVCOMMON\Winlib32\gen32.lib ..\..\IRS_DEVCOMMON\Winlib32\gui32.lib ..\..\IRS_DEVCOMMON\Check_Signature\Check_Signature.lib ..\..\IRS_DEVCOMMON\rdm45\lib\vwin\rdm45w32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:yes /pdb:"$(OUTDIR)\RAD.pdb" /debug /machine:I386 /nodefaultlib:"nafxcw.lib" /nodefaultlib:"libc.lib" /nodefaultlib:"msvcrt.lib" /out:"c:\irs\rad\RAD.exe" 
+LINK32_FLAGS=nafxcw.lib ..\..\common\Winlib32\plot.lib imagehlp.lib ..\..\Common\Winlib32\gen32.lib ..\..\Common\Winlib32\gui32.lib ..\..\Common\Check_Signature\Check_Signature.lib ..\..\Common\rdm45\lib\vwin\rdm45w32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:no /pdb:"$(OUTDIR)\RAD.pdb" /machine:I386 /nodefaultlib:"nafxcw.lib" /nodefaultlib:"libc.lib" /nodefaultlib:"msvcrt.lib" /out:"$(OUTDIR)\RAD.exe" 
 LINK32_OBJS= \
 	"$(INTDIR)\AdjustTime.obj" \
 	"$(INTDIR)\BinaryImport.obj" \
@@ -522,7 +509,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\WriteXML.obj" \
 	"$(INTDIR)\RAD.res"
 
-"..\..\..\irs\rad\RAD.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\RAD.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -535,21 +522,10 @@ INTDIR=.\Debug
 OutDir=.\Debug
 # End Custom Macros
 
-!IF "$(RECURSE)" == "0" 
+ALL : "$(OUTDIR)\RAD.exe" "$(OUTDIR)\RAD.bsc"
 
-ALL : "..\..\..\irs\rad\RAD.exe" "$(OUTDIR)\RAD.bsc"
 
-!ELSE 
-
-ALL : "CoLinearTimeAlign - Win32 Debug" "CoGrandImport - Win32 Debug" "CoBinaryImport - Win32 Debug" "CoVifmImport - Win32 Debug" "..\..\..\irs\rad\RAD.exe" "$(OUTDIR)\RAD.bsc"
-
-!ENDIF 
-
-!IF "$(RECURSE)" == "1" 
-CLEAN :"CoVifmImport - Win32 DebugCLEAN" "CoBinaryImport - Win32 DebugCLEAN" "CoGrandImport - Win32 DebugCLEAN" "CoLinearTimeAlign - Win32 DebugCLEAN" 
-!ELSE 
 CLEAN :
-!ENDIF 
 	-@erase "$(INTDIR)\AdjustTime.obj"
 	-@erase "$(INTDIR)\AdjustTime.sbr"
 	-@erase "$(INTDIR)\BinaryImport.obj"
@@ -760,15 +736,15 @@ CLEAN :
 	-@erase "$(INTDIR)\WriteXML.obj"
 	-@erase "$(INTDIR)\WriteXML.sbr"
 	-@erase "$(OUTDIR)\RAD.bsc"
+	-@erase "$(OUTDIR)\RAD.exe"
+	-@erase "$(OUTDIR)\RAD.ilk"
 	-@erase "$(OUTDIR)\RAD.pdb"
-	-@erase "..\..\..\irs\rad\RAD.exe"
-	-@erase "..\..\..\irs\rad\RAD.ilk"
 
 "$(OUTDIR)" :
     if not exist "$(OUTDIR)/$(NULL)" mkdir "$(OUTDIR)"
 
 CPP=cl.exe
-CPP_PROJ=/nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\Common" /I "..\CommonImportCom" /I "..\..\IRS_DEVCOMMON\winclude32" /I "..\..\IRS_DEVCOMMON\zapp3" /I "..\..\IRS_DEVCOMMON\rdm45\include" /I "..\..\IRS_DEVCOMMON\Zapp3\ZAPPH" /I "..\..\IRS_DEVCOMMON\Check_Signature" /I "c:\Program Files\MSXML 6.0\inc" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "Z_NP" /D "RW_NO_STL" /D "MSC" /FR"$(INTDIR)\\" /Fo"$(INTDIR)\\" /Fd"$(INTDIR)\\" /FD /c 
+CPP_PROJ=/nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\..\Common\misc\Integrated Review COMs" /I "..\..\Common\misc\Common" /I "..\..\Common\misc\CommonImportCom" /I "..\..\Common\winclude32" /I "..\..\Common\zapp3" /I "..\..\Common\rdm45\include" /I "..\..\Common\Zapp3\ZAPPH" /I "..\..\Common\Check_Signature" /I "\Program Files\Common Files\System\ado" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "Z_NP" /D "RW_NO_STL" /D "MSC" /FR"$(INTDIR)\\" /Fo"$(INTDIR)\\" /Fd"$(INTDIR)\\" /FD /c 
 
 .c{$(INTDIR)}.obj::
    $(CPP) @<<
@@ -803,7 +779,7 @@ CPP_PROJ=/nologo /MTd /W3 /Gm /GX /ZI /Od /I "..\Common" /I "..\CommonImportCom"
 MTL=midl.exe
 MTL_PROJ=/nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32 
 RSC=rc.exe
-RSC_PROJ=/l 0x409 /fo"$(INTDIR)\RAD.res" /i "..\..\IRS_DEVCOMMON\UpperLayer" /d "_DEBUG" 
+RSC_PROJ=/l 0x409 /fo"$(INTDIR)\RAD.res" /i ".\UpperLayer" /d "_DEBUG" 
 BSC32=bscmake.exe
 BSC32_FLAGS=/nologo /o"$(OUTDIR)\RAD.bsc" 
 BSC32_SBRS= \
@@ -917,7 +893,7 @@ BSC32_SBRS= \
 <<
 
 LINK32=link.exe
-LINK32_FLAGS=..\..\IRS_DEVCOMMON\Winlib32\plot.lib nafxcwd.lib imagehlp.lib ..\..\IRS_DEVCOMMON\Winlib32\gen32.lib ..\..\IRS_DEVCOMMON\Winlib32\gui32.lib ..\..\IRS_DEVCOMMON\Check_Signature\Check_Signature.lib ..\..\IRS_DEVCOMMON\rdm45\lib\vwin\rdm45w32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:yes /pdb:"$(OUTDIR)\RAD.pdb" /debug /machine:I386 /nodefaultlib:"nafxcwd.lib" /nodefaultlib:"libc.lib" /nodefaultlib:"msvcrtd.lib" /out:"c:\irs\rad\RAD.exe" 
+LINK32_FLAGS=nafxcwd.lib ..\..\common\Winlib32\plot.lib imagehlp.lib ..\..\Common\Winlib32\gen32.lib ..\..\Common\Winlib32\gui32.lib ..\..\Common\Check_Signature\Check_Signature.lib ..\..\Common\rdm45\lib\vwin\rdm45w32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:yes /pdb:"$(OUTDIR)\RAD.pdb" /debug /machine:I386 /nodefaultlib:"nafxcwd.lib" /nodefaultlib:"libc.lib" /nodefaultlib:"msvcrtd.lib" /out:"$(OUTDIR)\RAD.exe" 
 LINK32_OBJS= \
 	"$(INTDIR)\AdjustTime.obj" \
 	"$(INTDIR)\BinaryImport.obj" \
@@ -1022,13 +998,9 @@ LINK32_OBJS= \
 	"$(INTDIR)\VifmImport.obj" \
 	"$(INTDIR)\WriteNCCFile.obj" \
 	"$(INTDIR)\WriteXML.obj" \
-	"$(INTDIR)\RAD.res" \
-	"..\CoVifmImport\Debug\CoVifmImport.lib" \
-	"..\CoBinaryImport\Debug\CoBinaryImport.lib" \
-	"..\CoGrandImport\Debug\CoGrandImport.lib" \
-	"..\CoLinearTimeAlign\Debug\CoLinearTimeAlign.lib"
+	"$(INTDIR)\RAD.res"
 
-"..\..\..\irs\rad\RAD.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
+"$(OUTDIR)\RAD.exe" : "$(OUTDIR)" $(DEF_FILE) $(LINK32_OBJS)
     $(LINK32) @<<
   $(LINK32_FLAGS) $(LINK32_OBJS)
 <<
@@ -1136,7 +1108,7 @@ SOURCE=.\DbTime.cpp
 "$(INTDIR)\DbTime.obj"	"$(INTDIR)\DbTime.sbr" : $(SOURCE) "$(INTDIR)"
 
 
-SOURCE=..\Common\DirUtilities.cpp
+SOURCE=..\..\Common\misc\Common\DirUtilities.cpp
 
 "$(INTDIR)\DirUtilities.obj"	"$(INTDIR)\DirUtilities.sbr" : $(SOURCE) "$(INTDIR)"
 	$(CPP) $(CPP_PROJ) $(SOURCE)
@@ -1287,7 +1259,7 @@ SOURCE=.\FindMeas.cpp
 "$(INTDIR)\FindMeas.obj"	"$(INTDIR)\FindMeas.sbr" : $(SOURCE) "$(INTDIR)"
 
 
-SOURCE=..\Common\GenDateTime.cpp
+SOURCE=..\..\Common\misc\Common\GenDateTime.cpp
 
 "$(INTDIR)\GenDateTime.obj"	"$(INTDIR)\GenDateTime.sbr" : $(SOURCE) "$(INTDIR)"
 	$(CPP) $(CPP_PROJ) $(SOURCE)
@@ -1334,7 +1306,7 @@ SOURCE=.\MainDbCfg.cpp
 "$(INTDIR)\MainDbCfg.obj"	"$(INTDIR)\MainDbCfg.sbr" : $(SOURCE) "$(INTDIR)"
 
 
-SOURCE=..\Common\MyDateTime.cpp
+SOURCE=..\..\Common\misc\Common\MyDateTime.cpp
 
 "$(INTDIR)\MyDateTime.obj"	"$(INTDIR)\MyDateTime.sbr" : $(SOURCE) "$(INTDIR)"
 	$(CPP) $(CPP_PROJ) $(SOURCE)
@@ -1401,7 +1373,7 @@ SOURCE=.\ProgressBars.cpp
 "$(INTDIR)\ProgressBars.obj"	"$(INTDIR)\ProgressBars.sbr" : $(SOURCE) "$(INTDIR)"
 
 
-SOURCE=..\Common\ProgressWnd.cpp
+SOURCE=..\..\Common\misc\Common\ProgressWnd.cpp
 
 "$(INTDIR)\ProgressWnd.obj"	"$(INTDIR)\ProgressWnd.sbr" : $(SOURCE) "$(INTDIR)"
 	$(CPP) $(CPP_PROJ) $(SOURCE)
@@ -1516,7 +1488,7 @@ SOURCE=".\UPPERLAYER\RTTITLE.CPP"
 	$(CPP) $(CPP_PROJ) $(SOURCE)
 
 
-SOURCE=..\Common\SafeArrayUtil.cpp
+SOURCE=..\..\Common\misc\Common\SafeArrayUtil.cpp
 
 "$(INTDIR)\SafeArrayUtil.obj"	"$(INTDIR)\SafeArrayUtil.sbr" : $(SOURCE) "$(INTDIR)"
 	$(CPP) $(CPP_PROJ) $(SOURCE)
@@ -1584,70 +1556,6 @@ SOURCE=.\RAD.RC
 "$(INTDIR)\RAD.res" : $(SOURCE) "$(INTDIR)"
 	$(RSC) $(RSC_PROJ) $(SOURCE)
 
-
-!IF  "$(CFG)" == "RAD - Win32 Release"
-
-!ELSEIF  "$(CFG)" == "RAD - Win32 Debug"
-
-"CoVifmImport - Win32 Debug" : 
-   cd "\projects\IRS_DEV_B2R1\CoVifmImport"
-   $(MAKE) /$(MAKEFLAGS) /F .\CoVifmImport.mak CFG="CoVifmImport - Win32 Debug" 
-   cd "..\RAD"
-
-"CoVifmImport - Win32 DebugCLEAN" : 
-   cd "\projects\IRS_DEV_B2R1\CoVifmImport"
-   $(MAKE) /$(MAKEFLAGS) /F .\CoVifmImport.mak CFG="CoVifmImport - Win32 Debug" RECURSE=1 CLEAN 
-   cd "..\RAD"
-
-!ENDIF 
-
-!IF  "$(CFG)" == "RAD - Win32 Release"
-
-!ELSEIF  "$(CFG)" == "RAD - Win32 Debug"
-
-"CoBinaryImport - Win32 Debug" : 
-   cd "\projects\IRS_DEV_B2R1\CoBinaryImport"
-   $(MAKE) /$(MAKEFLAGS) /F .\CoBinaryImport.mak CFG="CoBinaryImport - Win32 Debug" 
-   cd "..\RAD"
-
-"CoBinaryImport - Win32 DebugCLEAN" : 
-   cd "\projects\IRS_DEV_B2R1\CoBinaryImport"
-   $(MAKE) /$(MAKEFLAGS) /F .\CoBinaryImport.mak CFG="CoBinaryImport - Win32 Debug" RECURSE=1 CLEAN 
-   cd "..\RAD"
-
-!ENDIF 
-
-!IF  "$(CFG)" == "RAD - Win32 Release"
-
-!ELSEIF  "$(CFG)" == "RAD - Win32 Debug"
-
-"CoGrandImport - Win32 Debug" : 
-   cd "\projects\IRS_DEV_B2R1\CoGrandImport"
-   $(MAKE) /$(MAKEFLAGS) /F .\CoGrandImport.mak CFG="CoGrandImport - Win32 Debug" 
-   cd "..\RAD"
-
-"CoGrandImport - Win32 DebugCLEAN" : 
-   cd "\projects\IRS_DEV_B2R1\CoGrandImport"
-   $(MAKE) /$(MAKEFLAGS) /F .\CoGrandImport.mak CFG="CoGrandImport - Win32 Debug" RECURSE=1 CLEAN 
-   cd "..\RAD"
-
-!ENDIF 
-
-!IF  "$(CFG)" == "RAD - Win32 Release"
-
-!ELSEIF  "$(CFG)" == "RAD - Win32 Debug"
-
-"CoLinearTimeAlign - Win32 Debug" : 
-   cd "\projects\IRS_DEV_B2R1\CoLinearTimeAlign"
-   $(MAKE) /$(MAKEFLAGS) /F .\CoLinearTimeAlign.mak CFG="CoLinearTimeAlign - Win32 Debug" 
-   cd "..\RAD"
-
-"CoLinearTimeAlign - Win32 DebugCLEAN" : 
-   cd "\projects\IRS_DEV_B2R1\CoLinearTimeAlign"
-   $(MAKE) /$(MAKEFLAGS) /F .\CoLinearTimeAlign.mak CFG="CoLinearTimeAlign - Win32 Debug" RECURSE=1 CLEAN 
-   cd "..\RAD"
-
-!ENDIF 
 
 
 !ENDIF 
