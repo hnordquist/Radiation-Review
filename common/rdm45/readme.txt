@@ -1,5 +1,5 @@
 October 2015
-Radiation Review uses DB Vista database technogy from Raima Corporation, 1997.
+Radiation Review uses DB Vista database technology from Raima Corporation, 1997.
 The C header files, link library and runtime dll are not included in this distribution.
 Contact the repository owner for more information.
 
