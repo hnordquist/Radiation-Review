@@ -1,0 +1,188 @@
+# Microsoft Developer Studio Generated Dependency File, included by CoVifmImport.mak
+
+.\CoVifmImport.cpp : \
+	"..\..\IRS_DEVCOMMON\Winclude32\GEN.H"\
+	"..\Common\GenDateTime.h"\
+	"..\Common\MyDateTime.h"\
+	".\CoVifmImport.h"\
+	".\CoVifmImport_i.c"\
+	".\VifmImport.h"\
+	
+
+.\CoVifmImport.rc : \
+	".\CoVifmImport.tlb"\
+	".\VifmImport.rgs"\
+	
+
+..\Common\DirUtilities.cpp : \
+	"..\Common\DirUtilities.h"\
+	"..\Common\ProgressWnd.h"\
+	
+
+.\FacCfgWrap.cpp : \
+	"..\..\..\irs\comlibs\cofacilitymgr.exe"\
+	"..\..\..\irs\comlibs\coirslogger.dll"\
+	"..\Common\HPDefines.h"\
+	"..\Common\imports.h"\
+	"..\Common\SafeArrayUtil.h"\
+	"..\Common\TypeDefinitions.h"\
+	"..\commonimportcom\db_vifm.h"\
+	".\FacCfgWrap.h"\
+	
+
+..\Common\GenDateTime.cpp : \
+	"..\..\IRS_DEVCOMMON\Winclude32\GEN.H"\
+	"..\Common\GenDateTime.h"\
+	
+
+..\Common\MyDateTime.cpp : \
+	"..\..\IRS_DEVCOMMON\Winclude32\GEN.H"\
+	"..\Common\GenDateTime.h"\
+	"..\Common\MyDateTime.h"\
+	
+
+..\Common\ProgressWnd.cpp : \
+	"..\Common\ProgressWnd.h"\
+	
+
+..\Common\SafeArrayUtil.cpp : \
+	"..\Common\SafeArrayUtil.h"\
+	
+
+.\StdAfx.cpp : \
+	"..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\StdAfx.h"\
+	
+
+.\VifmData.cpp : \
+	"..\..\irs_devcommon\rdm45\include\dproto.h"\
+	"..\..\irs_devcommon\rdm45\include\lockcomm.h"\
+	"..\..\irs_devcommon\rdm45\include\nopack.h"\
+	"..\..\irs_devcommon\rdm45\include\packlib.h"\
+	"..\..\irs_devcommon\rdm45\include\packwin.h"\
+	"..\..\irs_devcommon\rdm45\include\task.h"\
+	"..\..\irs_devcommon\rdm45\include\vista.h"\
+	"..\Common\DirUtilities.h"\
+	"..\Common\TypeDefinitions.h"\
+	"..\commonimportcom\db_vifm.h"\
+	"..\CommonImportCom\VistaBaseData.h"\
+	"..\CommonImportCom\VistaDb.h"\
+	".\VifmData.h"\
+	
+
+.\VifmDataFile.cpp : \
+	"..\..\irs_devcommon\check_signature\check_signature.h"\
+	"..\..\irs_devcommon\rdm45\include\dproto.h"\
+	"..\..\irs_devcommon\rdm45\include\lockcomm.h"\
+	"..\..\irs_devcommon\rdm45\include\nopack.h"\
+	"..\..\irs_devcommon\rdm45\include\packlib.h"\
+	"..\..\irs_devcommon\rdm45\include\packwin.h"\
+	"..\..\irs_devcommon\rdm45\include\task.h"\
+	"..\..\irs_devcommon\rdm45\include\vista.h"\
+	"..\..\IRS_DEVCOMMON\Winclude32\GEN.H"\
+	"..\Common\DirUtilities.h"\
+	"..\Common\GenDateTime.h"\
+	"..\Common\MyDateTime.h"\
+	"..\Common\TypeDefinitions.h"\
+	"..\commonimportcom\db_vifm.h"\
+	"..\CommonImportCom\VistaBaseData.h"\
+	"..\CommonImportCom\VistaDataFile.h"\
+	"..\CommonImportCom\VistaDb.h"\
+	".\FacCfgWrap.h"\
+	".\VifmData.h"\
+	".\VifmDataFile.h"\
+	
+
+.\VifmDbVista.cpp : \
+	"..\..\irs_devcommon\rdm45\include\dproto.h"\
+	"..\..\irs_devcommon\rdm45\include\lockcomm.h"\
+	"..\..\irs_devcommon\rdm45\include\nopack.h"\
+	"..\..\irs_devcommon\rdm45\include\packlib.h"\
+	"..\..\irs_devcommon\rdm45\include\packwin.h"\
+	"..\..\irs_devcommon\rdm45\include\task.h"\
+	"..\..\irs_devcommon\rdm45\include\vista.h"\
+	"..\Common\DirUtilities.h"\
+	"..\commonimportcom\db_vifm.h"\
+	"..\CommonImportCom\VistaDb.h"\
+	".\FacCfgWrap.h"\
+	".\VifmDbVista.h"\
+	".\VifmImportSupport.h"\
+	
+
+.\VifmImport.cpp : \
+	"..\..\irs_devcommon\rdm45\include\dproto.h"\
+	"..\..\irs_devcommon\rdm45\include\lockcomm.h"\
+	"..\..\irs_devcommon\rdm45\include\nopack.h"\
+	"..\..\irs_devcommon\rdm45\include\packlib.h"\
+	"..\..\irs_devcommon\rdm45\include\packwin.h"\
+	"..\..\irs_devcommon\rdm45\include\task.h"\
+	"..\..\irs_devcommon\rdm45\include\vista.h"\
+	"..\..\IRS_DEVCOMMON\Winclude32\GEN.H"\
+	"..\Common\DirUtilities.h"\
+	"..\Common\GenDateTime.h"\
+	"..\Common\MyDateTime.h"\
+	"..\Common\SafeArrayUtil.h"\
+	"..\Common\TypeDefinitions.h"\
+	"..\commonimportcom\db_vifm.h"\
+	"..\CommonImportCom\VistaBaseData.h"\
+	"..\CommonImportCom\VistaDataFile.h"\
+	"..\CommonImportCom\VistaDb.h"\
+	".\CoVifmImport.h"\
+	".\VifmData.h"\
+	".\VifmDataFile.h"\
+	".\VifmDbVista.h"\
+	".\VifmImport.h"\
+	".\VifmImportSupport.h"\
+	
+
+.\VifmImportSupport.cpp : \
+	"..\commonimportcom\db_vifm.h"\
+	".\FacCfgWrap.h"\
+	".\VifmImportSupport.h"\
+	
+
+..\CommonImportCom\VistaBaseData.cpp : \
+	"..\..\irs_devcommon\rdm45\include\dproto.h"\
+	"..\..\irs_devcommon\rdm45\include\lockcomm.h"\
+	"..\..\irs_devcommon\rdm45\include\nopack.h"\
+	"..\..\irs_devcommon\rdm45\include\packlib.h"\
+	"..\..\irs_devcommon\rdm45\include\packwin.h"\
+	"..\..\irs_devcommon\rdm45\include\task.h"\
+	"..\..\irs_devcommon\rdm45\include\vista.h"\
+	"..\..\IRS_DEVCOMMON\Winclude32\GEN.H"\
+	"..\Common\DirUtilities.h"\
+	"..\Common\GenDateTime.h"\
+	"..\commonimportcom\db_vifm.h"\
+	"..\CommonImportCom\VistaBaseData.h"\
+	"..\CommonImportCom\VistaDb.h"\
+	
+
+..\CommonImportCom\VistaDataFile.cpp : \
+	"..\..\irs_devcommon\rdm45\include\dproto.h"\
+	"..\..\irs_devcommon\rdm45\include\lockcomm.h"\
+	"..\..\irs_devcommon\rdm45\include\nopack.h"\
+	"..\..\irs_devcommon\rdm45\include\packlib.h"\
+	"..\..\irs_devcommon\rdm45\include\packwin.h"\
+	"..\..\irs_devcommon\rdm45\include\task.h"\
+	"..\..\irs_devcommon\rdm45\include\vista.h"\
+	"..\..\IRS_DEVCOMMON\Winclude32\GEN.H"\
+	"..\Common\DirUtilities.h"\
+	"..\Common\GenDateTime.h"\
+	"..\Common\MyDateTime.h"\
+	"..\commonimportcom\db_vifm.h"\
+	"..\CommonImportCom\VistaBaseData.h"\
+	"..\CommonImportCom\VistaDataFile.h"\
+	"..\CommonImportCom\VistaDb.h"\
+	
+
+..\CommonImportCom\VistaDb.cpp : \
+	"..\..\irs_devcommon\rdm45\include\dproto.h"\
+	"..\..\irs_devcommon\rdm45\include\lockcomm.h"\
+	"..\..\irs_devcommon\rdm45\include\nopack.h"\
+	"..\..\irs_devcommon\rdm45\include\packlib.h"\
+	"..\..\irs_devcommon\rdm45\include\packwin.h"\
+	"..\..\irs_devcommon\rdm45\include\task.h"\
+	"..\..\irs_devcommon\rdm45\include\vista.h"\
+	"..\Common\DirUtilities.h"\
+	"..\CommonImportCom\VistaDb.h"\
+	

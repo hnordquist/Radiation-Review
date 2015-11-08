@@ -1,0 +1,71 @@
+RAD.EXE – 
+--------------------------------------------------------------------------------------------------
+Version 3.2.0.6b 
+June 25, 2009
+Engineer:  John C. Determan
+
+A. CHANGED FILES:
+
+The files that changed in this updated delivery of RAD are as follows:
+1.	RAD.EXE
+
+B  FILE DATE/TIME/SIZE:
+
+The following list indicates the date/time/size of the files that should be updated for any deliveries of the library in the bundled UNARM product.
+
+1.	June 25, 2009, 11:54:52 AM             2,756,683 bytes RAD.exe
+
+
+C.  PATH REQUIREMENTS:  
+
+
+D.  CHANGES MADE TO THE CODE:
+1.	Modified Data Integrity output to include one-line descriptions for each status bit set in the flag
+2.	COrrected log file output for event, and direction.  Logs show header info in all situations.
+3.	Event summary produced incorrect results in numbering of events and sum of events, corrected
+4.	Flaw in binary import corrected, getDataByStation
+5.	dbEvent.cpp lines 1037, 1065 - event qualification on station type added to prevent spurious events
+6.	dbImport.cpp lines in region 1500 and below added to make sure data files are closing
+
+E.  PRODUCT DEPLOYMENT/BUILD NOTES:
+None
+F.  KNOWN ISSUES
+1.	None
+
+G. NOTES: 
+
+none
+
+
+RAD.EXE – 
+--------------------------------------------------------------------------------------------------
+Version 3.2.0.6b (not updating as this is the versoin number we said we would deliver as B2R1)
+August 10, 2009
+Engineer:  John C. Determan
+
+A. CHANGED FILES:
+
+The files that changed in this updated delivery of RAD are as follows:
+1.	RAD.EXE
+
+B  FILE DATE/TIME/SIZE:
+
+The following list indicates the date/time/size of the files that should be updated for any deliveries of the library in the bundled UNARM product.
+
+1.	August 10, 2009, 10:14:26 AM             2,756,683 bytes RAD.exe
+
+
+C.  PATH REQUIREMENTS:  
+
+
+D.  CHANGES MADE TO THE CODE:
+6.	dbImport.cpp ImportData and ReadHeader - apply strstr search to file extension only, to avoid path dependence (was finding SL in IHVSLHA and directing SR Data to the VIFM import COM)
+
+E.  PRODUCT DEPLOYMENT/BUILD NOTES:
+None
+F.  KNOWN ISSUES
+1.	None
+
+G. NOTES: 
+
+do thorough import testing on RR to verify these changes

@@ -1,0 +1,34 @@
+HKCR
+{
+	Integrated.Review.System
+	{
+		Import
+		{
+			CoVifmImport.CoVifmImport.1 = s 'CoVifmImport Class'
+			{
+				CLSID = s '{0F0A1D74-667B-11D6-819C-00C04F60E89B}'
+			}
+			CoVifmImport.CoVifmImport = s 'CoVifmImport Class'
+			{
+				CLSID = s '{0F0A1D74-667B-11D6-819C-00C04F60E89B}'
+				CurVer = s 'CoVifmImport.CoVifmImport.1'
+				ImportFileType = s 'VBF'
+				InstrumentName = s 'BOT'
+			}
+		}
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {0F0A1D74-667B-11D6-819C-00C04F60E89B} = s 'CoVifmImport Class'
+		{
+			ProgID = s 'Integrated.Review.System\Import\CoVifmImport.CoVifmImport.1'
+			VersionIndependentProgID = s 'Integrated.Review.System\Import\CoVifmImport.CoVifmImport'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{0F0A1D66-667B-11D6-819C-00C04F60E89B}'
+		}
+	}
+}
