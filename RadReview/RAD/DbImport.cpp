@@ -1380,7 +1380,8 @@ int ReadHeader(
 		pStaID->sDataType = FLOAT_TYPE;
 		status = 1;
 		char * ADAM_group  = strstr (strupr(szFilename), "_GP") + 3;
-		pStaID->sStaID = (int) ADAM_group [0] & 0x07;
+		//pStaID->sStaID = (int) ADAM_group [0] & 0x0F;  // permit _GP0 - _GP9
+		pStaID->sStaID = atoi(ADAM_group); // permit _GPnnnn
 	}
 	//Add EOSS type to Rad Select Files allowable type.
 	else if (strstr(szTemp, ".ess"))

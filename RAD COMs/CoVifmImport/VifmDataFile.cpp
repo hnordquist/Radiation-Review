@@ -365,12 +365,13 @@ bool CVifmDataFile::ReadVBFHeader(fpos_t pos, const CString& strNameWithPath, CS
 	if (strstr(strlwr(Filename), ".vbf") != NULL) 
 	{
 		ADAM_group = strstr (strupr(Filename), "_GP") + 3;
-		msStaNum = (int) ADAM_group [0] & 0x07;
+		//msStaNum = (int) ADAM_group [0] & 0x0F; // permit _GP0 - _GP9 
+		msStaNum = atoi(ADAM_group); // permit _GPnnnn
 	}
 	else 
 	{
 		ADAM_group = strrchr (Filename, '.') - 3;
-		msStaNum = (int) ADAM_group [2] & 0x07;
+		msStaNum = (int) ADAM_group [2] & 0x0F; // permit 0 - 9, cannot be more than 1 digit here
 	}
 
 	if (pstrErrorMsg) 
@@ -1540,19 +1541,24 @@ int CVifmDataFile::IAEAReadDataFile (
 		//pjm 1/19/06: begin most significant changes for SCR00226
 		if (strcmp(str, "VIFM") != 0) // this is a signed file  // BMEND-124 jfl 6/29/10: ??? but see the Grand checksig section 
 		{	
-			unsigned char *publicKey, *signatureTimestamp; //not used
+			int iStatus = 0;
 
-			//Use CheckSignatureEx() because the return is testable.
-			int iStatus = CheckSignatureEx (inputFileName, &lFileOffset, &lUsableFileLength,  
-				&publicKey, &signatureTimestamp );
+			{
+				unsigned char *publicKey, *signatureTimestamp; //not used
+
+				//Use CheckSignatureEx() because the return is testable.
+				iStatus = CheckSignatureEx(inputFileName, &lFileOffset, &lUsableFileLength,
+					&publicKey, &signatureTimestamp);
+			}
 
 			// iStatus interpretation (From Cesare's InLineVerifier.c file)
 			//0 = Successfully verified
-			//1 = File is CORRUPTED - signature is invalid
+			//1 = File is CORRUPTED - signature is invalid, but there was a signature
 			//3 = Verified OK, but CA authority is unknown
 			//-14 = Input file has no S/MIME format       // BMEND-124
 			// All others are failures.
-			if ((iStatus == 0) || (iStatus == 3))
+			if ((iStatus == 0) || (iStatus == 3) 
+							   || (iStatus == 1)) // use same leniency as GrandImport
 			{
 				pos = lFileOffset;
 				bIsSigned = true;   // BMEND-124
@@ -1636,7 +1642,8 @@ int CVifmDataFile::IAEAReadDataFile (
 		if (cfirst != NULL)
 		{
 			ADAM_group = cfirst + 3;//strstr (strupr(inputFileName), "_GP") + 3;
-			(*station_ID) = (int)ADAM_group[0] & 0x07;
+			//(*station_ID) = (int)ADAM_group[0] & 0x0F; // permit _GP0 - _GP9 
+			(*station_ID) = atoi(ADAM_group); // permit _GPnnnn
 		}
 		else
 		{
@@ -1646,7 +1653,7 @@ int CVifmDataFile::IAEAReadDataFile (
 	else // extension is other than ".vbf"
 	{
 		ADAM_group = strrchr (inputFileName, '.') - 3;
-		(*station_ID) = (int) ADAM_group [2] & 0x07;
+		(*station_ID) = (int) ADAM_group [2] & 0x0F; // permit 0 - 9, cannot be more than 1 digit here
 	}
 
 	//pjm 1/19/06: SCR00226 (Replaced the line here because it made it so

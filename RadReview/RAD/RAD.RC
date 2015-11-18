@@ -1825,8 +1825,8 @@ IDB_BITMAP1             BITMAP  DISCARDABLE     "RES/RADTitle.bmp"
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 3,2,1,1
- PRODUCTVERSION 3,2,1,1
+ FILEVERSION 3,2,1,2
+ PRODUCTVERSION 3,2,1,2
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x21L
@@ -1844,14 +1844,14 @@ BEGIN
             VALUE "Comments", "\0"
             VALUE "CompanyName", "Los Alamos National Laboratory (NEN-1/DSA-3)\0"
             VALUE "FileDescription", "Radiation Review\0"
-            VALUE "FileVersion", "Version 3.2.1.1\0"
+            VALUE "FileVersion", "Version 3.2.1.2\0"
             VALUE "InternalName", "Radiation Review (RAD)\0"
-            VALUE "LegalCopyright", "Copyright © 2014 LANS, LLC. All rights reserved.\0"
+            VALUE "LegalCopyright", "Copyright © 2014 LANS, LLC. See license.\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "RAD.EXE\0"
             VALUE "PrivateBuild", "\0"
             VALUE "ProductName", "Radiation Review\0"
-            VALUE "ProductVersion", "Version 3.2.1.1\0"
+            VALUE "ProductVersion", "Version 3.2.1.2\0"
         END
     END
     BLOCK "VarFileInfo"
