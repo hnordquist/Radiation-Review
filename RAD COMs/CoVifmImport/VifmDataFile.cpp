@@ -362,11 +362,20 @@ bool CVifmDataFile::ReadVBFHeader(fpos_t pos, const CString& strNameWithPath, CS
 	CString TempStr = strNameWithPath;
 	LPTSTR Filename = TempStr.GetBuffer(255);
 
-	if (strstr(strlwr(Filename), ".vbf") != NULL) 
+	if (strstr(strlwr(Filename), ".vbf") != NULL)
 	{
-		ADAM_group = strstr (strupr(Filename), "_GP") + 3;
-		//msStaNum = (int) ADAM_group [0] & 0x0F; // permit _GP0 - _GP9 
-		msStaNum = atoi(ADAM_group); // permit _GPnnnn
+		char *cfirst = strstr(strupr(Filename), "_GP");
+		if (cfirst == NULL)
+			cfirst = strstr(strupr(Filename), "-GP");
+		if (cfirst != NULL)
+			try
+		{
+			ADAM_group = cfirst + 3;//strstr (strupr(inputFileName), "_GP") + 3;
+			//ADAM_group = strstr (strupr(Filename), "_GP") + 3;
+			//msStaNum = (int) ADAM_group [0] & 0x0F; // permit _GP0 - _GP9 
+			msStaNum = atoi(ADAM_group); // permit _GPnnnn
+		}
+		catch (...) {}
 	}
 	else 
 	{
@@ -1635,15 +1644,20 @@ int CVifmDataFile::IAEAReadDataFile (
 	// 16-May-2005 SFK Add read past 3072 (0x0c00) bytes of header if *.vbf extension (new format)
 	// 19-Jan-2006 PJM Added protection code so that this will not crash program if the name of the
 	//                 file does not contain the "_GP" character string.
-	if (strstr(strlwr(inputFileName), ".vbf") != NULL) 
+	if (strstr(strlwr(inputFileName), ".vbf") != NULL)
 	{
-		char *cfirst = strstr (strupr(inputFileName), "_GP");
-
+		char *cfirst = strstr(strupr(inputFileName), "_GP");  // hmmmm
+		if (cfirst == NULL)
+			cfirst = strstr(strupr(inputFileName), "-GP"); // oops 
 		if (cfirst != NULL)
 		{
-			ADAM_group = cfirst + 3;//strstr (strupr(inputFileName), "_GP") + 3;
-			//(*station_ID) = (int)ADAM_group[0] & 0x0F; // permit _GP0 - _GP9 
-			(*station_ID) = atoi(ADAM_group); // permit _GPnnnn
+			try {
+				ADAM_group = cfirst + 3;
+				//strstr (strupr(inputFileName), "_GP") + 3;
+				//(*station_ID) = (int)ADAM_group[0] & 0x0F; // permit _GP0 - _GP9 
+				(*station_ID) = atoi(ADAM_group); // permit _GPnnnn
+			}
+			catch (...) {}
 		}
 		else
 		{
