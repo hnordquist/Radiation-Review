@@ -307,7 +307,10 @@ bool CGrandData::GetDataStatistics(
 		dActualEndTime = dbfData.d_fdata_time[i];
 		ulPtsSoFar = dbfData.ul_fdata_pts_so_far;
 		if (bOnlyOneDay) {
-			mulNumPtsActual = ulPtsSoFar + i +1 - ulPtsInDayBeforeStart;
+			if ((long)ulPtsInDayBeforeStart - (long)ulPtsSoFar < 0)
+				mulNumPtsActual = 0; // #6: probably the data points are out of order
+			else
+				mulNumPtsActual = ulPtsSoFar + i + 1 - ulPtsInDayBeforeStart;
 		}
 		else {
 			mulNumPtsActual = mulNumPtsActual + ulPtsSoFar + i + 1;

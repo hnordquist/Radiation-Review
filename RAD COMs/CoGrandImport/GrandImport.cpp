@@ -907,7 +907,7 @@ STDMETHODIMP CGrandImport::GetDataStatistics(
 					*pActualEndTime = Actual.dEnd;
 					*plNumMembers = Inst.mulNumPtsActual;
 					//hn -- This is a test
-					if (Inst.mulNumPtsActual ==0)
+					if (Inst.mulNumPtsActual ==0 || (*plNumMembers < 0))
 						bSuccess = false;
 				}
 				else

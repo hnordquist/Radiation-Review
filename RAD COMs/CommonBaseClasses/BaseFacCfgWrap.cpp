@@ -166,8 +166,7 @@ CString CBaseFacCfgWrap::GetFacilityDirectory(short sFacID)
 	if (m_pIFacCfgMgr)
 	{
 		BSTR bstr = m_pIFacCfgMgr->GetFacilityDirectory(sFacID);
-		CString cs(bstr);
-		strTemp = cs;
+		strTemp = bstr;
 		::SysFreeString(bstr);
 	}
 

@@ -203,7 +203,7 @@ void CDirUtilities::AppendBackslash(CString &cs)
 {
 	cs.TrimRight();			// get rid of trailing spaces
 
-	if (cs.Right(1) != "\\") 
+	if (cs.GetLength() > 0 && cs[cs.GetLength() - 1] != '\\')
 		cs += "\\";			// add trailing slash if not there
 }
 
